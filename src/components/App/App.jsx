@@ -1,30 +1,39 @@
-import { useState } from 'react'
-//
-import reactLogo from '../../assets/react.svg'
-import viteLogo from '/vite.svg'
-//
-import css from "./App.module.css";
-import clsx from 'clsx';
+import { lazy, Suspense} from "react";
+import { Routes, Route } from "react-router-dom";
+import css from './App.module.css';
+import { DNA } from "react-loader-spinner";
+import Navigation from "../Navigation/Navigation";
+const HomePage = lazy(()=> import("../../pages/HomePage/HomePage"));
+const MoviesPage = lazy(()=> import("../../pages/MoviesPage/MoviesPage"));
+const MovieDetailsPage = lazy(() => import("../../pages/MovieDetailsPage/MovieDetailsPage"));
+const NotFound = lazy (() => import("../../pages/NotFound/NotFound"));
+const MovieCast = lazy(() => import("../MovieCast/MovieCast"));
+const MovieReviews = lazy (() =>  import("../MovieReviews/MovieReviews"));
 
-const App = () =>{
-  const [count, setCount] = useState(0);
-  
+const App = () => {  
   return (
     <>
-      <div className={css.wrapper}>
-        <a href="https://vitejs.dev">
-          <img src={viteLogo} className={css.logo} alt="Vite logo" />
-        </a>
-        <a href="https://react.dev">
-          <img src={reactLogo} className={clsx(css.logo, css.react)} alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React template</h1>
-      <div className={css.card}>
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-      </div>
+      <Navigation/>
+      <Suspense fallback={
+        <div className={css.loading}>
+          <DNA
+            visible={true}
+            height="80"
+            width="80"
+            ariaLabel="dna-loading"
+            wrapperClass="dna-wrapper"/>
+        </div>
+      }>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/movies" element={<MoviesPage/>}/>
+          <Route path="/movies/:movieId" element={<MovieDetailsPage />}>
+            <Route path="cast" element={<MovieCast/>} />
+            <Route path="reviews" element={<MovieReviews/>} />
+          </Route>
+          <Route path="*" element={<NotFound/>} />
+        </Routes>
+      </Suspense>
     </>
   )
 }

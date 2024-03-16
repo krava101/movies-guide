@@ -1,0 +1,33 @@
+.form{
+    display: flex;
+    justify-content: center;
+    padding: 20px 40px 0;
+}
+
+.form input{
+    height: 40px;
+    width: 300px;
+    background-color: transparent;
+    border-radius: 8px 0 0 8px;
+    border: 1px solid #fff;
+    border-right: none;
+    outline: none;
+    padding: 0px 16px;
+    color: #fff;
+}
+
+.form input::placeholder{
+    color: #fff;
+}
+
+.form button{
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border-radius: 0 8px 8px 0;
+    border: 1px solid #fff;
+    border-left: none;
+    color: #fff;
+}
