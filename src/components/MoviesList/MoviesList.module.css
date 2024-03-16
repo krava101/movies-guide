@@ -1,6 +1,7 @@
 .moviesList {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
     padding: 40px;
     max-width: 1660px;

@@ -3,6 +3,7 @@ import MoviesList from "../../components/MoviesList/MoviesList";
 import { fetchMovies } from "../../movies";
 import toast, { Toaster } from 'react-hot-toast';
 import { DNA } from "react-loader-spinner";
+import css from './HomePage.module.css';
 
 const notify = (message) => toast.error(message);
 
@@ -28,6 +29,7 @@ export default function HomePage() {
   
   return (
     <>
+      <p className={css.top}>Top movies of the day</p>
       <DNA
         visible={loaderActive}
         wrapperStyle={{
