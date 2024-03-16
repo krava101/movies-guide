@@ -29,7 +29,7 @@ export default function HomePage() {
   
   return (
     <>
-      <p className={css.top}>Top movies of the day</p>
+      <p className={css.top}>Top movies of the <span>day</span></p>
       <DNA
         visible={loaderActive}
         wrapperStyle={{

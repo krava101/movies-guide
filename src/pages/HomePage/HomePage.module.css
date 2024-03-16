@@ -1,7 +1,11 @@
 .top{
     padding-top: 20px;
     text-align: center;
-    font-size: 30pt;
+    font-size: 26pt;
     color: #fff;
     font-weight: 500;
+}
+
+.top span{
+    color: #ff4800;
 }
