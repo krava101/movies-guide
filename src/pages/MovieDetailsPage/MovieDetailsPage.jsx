@@ -39,7 +39,7 @@ export default function MovieDetailsPage() {
       <div>
         <div className={css.moviePoster}>
           {movie.poster_path ? <img src={'https://image.tmdb.org/t/p/w400/' + movie.poster_path} alt="Movie img" /> : <span className={css.customPoster}>{movie.original_title}</span>}
-          <a href={movie.homepage}>Visit homepage</a>
+          {movie.homepage && <a href={movie.homepage}>Visit homepage</a>}
         </div >
         <div className={css.movieInfo}> 
           <p>Raiting: <span>{movie.vote_average}</span></p>

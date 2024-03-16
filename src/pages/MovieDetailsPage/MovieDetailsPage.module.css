@@ -25,6 +25,7 @@
 
 .moviePoster img {
     width: 400px;
+    min-width: 250px;
     border-radius: 6px;
 }
 
@@ -80,6 +81,7 @@
 .movieNav{
     display: flex;
     gap: 20px;
+    margin-bottom: 20px;
 }
 
 .movieNav a {
@@ -97,4 +99,12 @@
     color: #fff;
     font-size: 20pt;
     padding: 10px 0;
+}
+
+
+@media screen and (max-width: 800px) {
+    .wrapper>div{
+        flex-wrap: wrap;
+        gap: 60px;
+    }
 }
