@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import MoviesList from "../../components/MoviesList/MoviesList";
+import MoviesList from "../../components/MovieList/MovieList";
 import { fetchMovies } from "../../movies";
 import toast, { Toaster } from 'react-hot-toast';
 import { DNA } from "react-loader-spinner";

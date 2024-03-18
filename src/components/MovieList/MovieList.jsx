@@ -1,7 +1,7 @@
 import MovieCard from "../MovieCard/MovieCard";
-import css from './MoviesList.module.css';
+import css from './MovieList.module.css';
 
-export default function MoviesList({movies}) {
+export default function MovieList({movies}) {
   return (
     <ul className={css.moviesList}>
       {movies.map(e => (<MovieCard key={e.id} movie={e} />))}

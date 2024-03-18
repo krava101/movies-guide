@@ -1,11 +1,11 @@
 import { useSearchParams } from "react-router-dom";
-import MoviesList from "../../components/MoviesList/MoviesList";
+import MovieList from "../../components/MovieList/MovieList";
 import css from './MoviesPage.module.css';
 import { IoSearch } from "react-icons/io5";
 import { useEffect, useState } from "react";
 import { fetchQueryMovies } from "../../movies";
 import toast, { Toaster } from 'react-hot-toast';
-import { TailSpin } from "react-loader-spinner";
+import { DNA } from "react-loader-spinner";
 
 const notify = (message) => toast.error(message);
 
@@ -35,32 +35,32 @@ export default function MoviesPage() {
     if (event.currentTarget.elements.query.value === '') {
       return notify('Please enter something!');
     }
+    setSearchParams({query: event.currentTarget.elements.query.value})
     event.target.reset();
   }
 
   return (
     <>
       <form className={css.form} onSubmit={onSubmit}>
-        <TailSpin
-          visible={loaderActive}
-          height="40"
-          width="40"
-          color="#4fa94d"
-          ariaLabel="tail-spin-loading"
-          radius="1"
-          wrapperStyle={{}}
-          wrapperClass=""
-        />
         <input
           type="text"
           name="query"
           placeholder="Search movies"
           autoComplete="off"
-          onChange={(e) => setSearchParams({ query: e.target.value })}
         />
         <button type="submit"><IoSearch /></button>
       </form>
-      <MoviesList movies={movies} />
+      <DNA
+        visible={loaderActive}
+        wrapperStyle={{
+          display: 'block',
+          margin: '0 auto'
+        }}
+        height="80"
+        width="80"
+        ariaLabel="dna-loading"
+        wrapperClass="dna-wrapper" />
+      <MovieList movies={movies} />
       <Toaster position="top-right" reverseOrder={false}/>
     </>
   )
