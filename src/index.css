@@ -2,7 +2,9 @@
   font-family: sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  background-color: #666666;
+  background-color: var(--bgc);
+  --bgc: #131313;
+  --content-bg: #2e2e2e;
 }
 
 section {
@@ -34,4 +36,8 @@ ol {
 img {
   display: block;
   max-width: 100%;
+}
+
+button{
+  cursor: pointer;
 }

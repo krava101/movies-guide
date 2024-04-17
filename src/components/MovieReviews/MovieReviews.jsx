@@ -1,24 +1,19 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
-import { fetchMovieReviews } from "../../movies";
+import { fetchMovieReviews } from "../../movie";
 import css from './MovieReviews.module.css';
-import { DNA } from "react-loader-spinner";
 
 export default function MovieReviews() {
   const { movieId } = useParams();
   const [reviews, setReviews] = useState([]);
-  const [loaderActive, setLoaderActive] = useState(false);
   
   useEffect(() => {
-    setLoaderActive(true)
     async function fetchData() {
       try {
         const data = await fetchMovieReviews(movieId);
         setReviews(data);
       } catch (err) {
           console.log(err)
-      } finally {
-        setLoaderActive(false);
       }
     }
     fetchData();
@@ -28,13 +23,6 @@ export default function MovieReviews() {
 
   return (
     <>
-      <DNA
-        visible={loaderActive}
-        height="80"
-        width="80"
-        ariaLabel="dna-loading"
-        wrapperClass="dna-wrapper"
-      />
       {reviews.length ? <ul className={css.reviewsList}>
         {reviews.map(e =>
           <li key={e.id}>

@@ -1,0 +1,1 @@
+export const selectCurrentMovie = state => state.currentMovie.movie;

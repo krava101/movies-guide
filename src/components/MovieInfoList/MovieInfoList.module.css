@@ -2,10 +2,12 @@
     display: flex;
     gap: 6px;
     margin-bottom: 15px;
+    width: 100%;
 }
 
 .list {
     display: flex;
+    flex-wrap: wrap;
     gap: 6px;
     opacity: 0.7;
 }

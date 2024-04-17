@@ -1,0 +1,19 @@
+.moviePoster img {
+  width: 400px;
+  min-width: 250px;
+  border-radius: 6px;
+}
+
+.moviePoster a{
+  display: grid;
+  place-items: center;
+  height: 40px;
+  width: 180px;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 6px;
+  font-size: 14pt;
+  text-decoration: none;
+  opacity: 0.8;
+  margin-top: 15px;
+}
