@@ -16,7 +16,7 @@ export const fetchMovies = createAsyncThunk('movies/fetchMovies', async (search,
 
 export const fetchQueryMovies = createAsyncThunk('movies/fetchQueryMovies', async (query, thunkAPI) => {
   try {
-      const response = await axios.get(`/search/movie?include_adult=false&language=en-US&page=${query.page}&query=${query.search}`);
+      const response = await axios.get(`/search/movie?include_adult=false&page=${query.page}&query=${query.search}`);
       return response.data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);

@@ -26,8 +26,7 @@ export default function HomePage() {
   useEffect(() => {
     dispatch(clearMovie());
     dispatch(changePage(page))
-    dispatch(fetchMovies({ trending, page }));
-    search && dispatch(fetchQueryMovies({ search, page }));
+    search ? dispatch(fetchQueryMovies({ search, page })) : dispatch(fetchMovies({ trending, page }));
   },[dispatch, search, trending, page, setSearchParams])
 
 

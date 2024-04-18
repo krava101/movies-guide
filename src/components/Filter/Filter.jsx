@@ -17,7 +17,6 @@ export default function Filter() {
     Array.from(filterRef.current.children).filter(e => e.dataset.filter === trend ? e.classList.add(css.active) : null)
   }, [trend])
 
-
   const handleFilter = (event) => {
     if (event.target !== event.currentTarget) {
       Array.from(event.currentTarget.children).forEach(e => e.classList.remove(css.active))
