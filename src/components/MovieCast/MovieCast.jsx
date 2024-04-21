@@ -1,23 +1,18 @@
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import { useParams } from "react-router-dom";
-import { fetchMovieCast } from "../../movie";
 import css from './MovieCast.module.css';
+import { useDispatch, useSelector } from "react-redux";
+import { selectCast } from "../../redux/currentMovie/selectors";
+import { fetchMovieCast } from "../../redux/currentMovie/operations";
 
 export default function MovieCast() {
   const { movieId } = useParams();
-  const [cast, setCast] = useState([]);
+  const dispatch = useDispatch();
+  const cast = useSelector(selectCast);
 
   useEffect(() => {
-    async function fetchData() {
-      try {
-        const data = await fetchMovieCast(movieId);
-        setCast(data);
-      } catch (err) {
-        console.log(err);
-      }
-    }
-    fetchData();
-  }, [movieId])
+    movieId && dispatch(fetchMovieCast(movieId));
+  }, [movieId, dispatch])
 
   const getNameInitials = name => name.split(' ').map(e => e[0]).join('');
 

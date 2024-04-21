@@ -24,6 +24,8 @@
 
 .pagination button.active{
   opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 5px;
 }
 
 .pagList{

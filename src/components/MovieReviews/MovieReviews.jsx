@@ -1,23 +1,18 @@
-import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchMovieReviews } from "../../redux/currentMovie/operations";
+import { selectReviews } from "../../redux/currentMovie/selectors";
+import { useEffect } from "react";
 import { useParams } from "react-router-dom"
-import { fetchMovieReviews } from "../../movie";
 import css from './MovieReviews.module.css';
 
 export default function MovieReviews() {
   const { movieId } = useParams();
-  const [reviews, setReviews] = useState([]);
+  const dispatch = useDispatch();
+  const reviews = useSelector(selectReviews); 
   
   useEffect(() => {
-    async function fetchData() {
-      try {
-        const data = await fetchMovieReviews(movieId);
-        setReviews(data);
-      } catch (err) {
-          console.log(err)
-      }
-    }
-    fetchData();
-  }, [movieId])
+    movieId && dispatch(fetchMovieReviews(movieId));
+  }, [movieId, dispatch])
 
   const getNameInitials = name => name.split(' ').map(e => e[0]).join('');
 

@@ -14,12 +14,20 @@ export const fetchMovieInfo = createAsyncThunk('currentMovie/fetchMovieInfo', as
     }
 })
 
-export async function fetchMovieCast(id) {
-  const response = await axios.get(`/movie/${id}/credits`);
-  return response.data.cast;
-}
+export const fetchMovieCast = createAsyncThunk('currentMovie/fetchMovieCast', async (id, thunkAPI)=>{
+  try {
+      const response = await axios.get(`/movie/${id}/credits`);
+      return response.data.cast;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
+    }
+})
 
-export async function fetchMovieReviews(id) {
-  const response = await axios.get(`/movie/${id}/reviews`);
-  return response.data.results;
-}
+export const fetchMovieReviews = createAsyncThunk('currentMovie/fetchMovieReviews', async (id, thunkAPI)=>{
+  try {
+      const response = await axios.get(`/movie/${id}/reviews`);
+      return response.data.results;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
+    }
+})

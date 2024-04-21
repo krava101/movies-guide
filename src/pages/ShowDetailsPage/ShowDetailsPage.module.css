@@ -1,0 +1,27 @@
+.show {
+  padding: 40px;
+}
+
+.backLink {
+  color: #fff;
+  font-size: 18pt;
+}
+
+.showInfo {
+  display: flex;
+  gap: 120px;
+  background-image: url();
+}
+
+.title {
+  font-size: 36pt;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 800px) {
+  .showInfo {
+    flex-wrap: wrap;
+    gap: 60px;
+  }
+
+}

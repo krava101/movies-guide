@@ -30,7 +30,7 @@ export default function SearchMovies() {
       <input
         type="text"
         name="query"
-        placeholder="Search movies"
+        placeholder="Search movies and series"
         autoComplete="off"
       />
       <button type="submit"><IoSearch /></button>

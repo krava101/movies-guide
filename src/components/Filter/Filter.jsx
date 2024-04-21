@@ -5,6 +5,8 @@ import { useEffect, useRef } from 'react';
 import { changeTrending } from '../../redux/filter/slice';
 import { selectTrending } from '../../redux/filter/selectors';
 import { useSearchParams } from 'react-router-dom';
+import { selectCurrentMovie } from '../../redux/currentMovie/selectors';
+import { selectCurrentShow } from '../../redux/currentShow/selectors';
 
 export default function Filter() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -12,9 +14,11 @@ export default function Filter() {
   const dispatch = useDispatch();
   const selectedTrending = useSelector(selectTrending);
   const trend = searchParams.get('trending') ? searchParams.get('trending') : selectedTrending;
+  const movie = useSelector(selectCurrentMovie);
+  const show = useSelector(selectCurrentShow);
 
   useEffect(() => {
-    Array.from(filterRef.current.children).filter(e => e.dataset.filter === trend ? e.classList.add(css.active) : null)
+    Array.from(filterRef.current.children).filter(e => e.dataset.filter === trend ? e.classList.add(css.active) : e.classList.remove(css.active))
   }, [trend])
 
   const handleFilter = (event) => {
@@ -32,11 +36,12 @@ export default function Filter() {
   }
 
   return (
-    <>
-      <p className={css.top} ref={filterRef} onClick={handleFilter}>Top of the 
+    <>{ !movie && !show &&
+      <p className={css.top} ref={filterRef} onClick={handleFilter}>Top of the
         <button className={css.filterLink} data-filter='day'>day</button>
-        <button className={css.filterLink} data-filter='week'>week</button> 
-      </p>
+        <button className={css.filterLink} data-filter='week'>week</button>
+      </p>}
     </>
+    
   )
 }

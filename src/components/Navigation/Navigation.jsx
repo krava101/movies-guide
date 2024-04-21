@@ -16,9 +16,12 @@ export default function Navigation() {
   return (
     <nav className={css.nav}>
       <NavLink to="/" className={navLink} onClick={handleRefresh}>
+        Home
+      </NavLink>
+      <NavLink to="/movies" className={navLink} onClick={handleRefresh}>
         Movies
       </NavLink>
-      <NavLink to="/shows" className={navLink}>
+      <NavLink to="/shows" className={navLink} onClick={handleRefresh}>
         TV shows
       </NavLink>
       <Filter/>

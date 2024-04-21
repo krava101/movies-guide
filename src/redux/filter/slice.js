@@ -6,6 +6,7 @@ const filterSlice = createSlice({
     trending: 'day',
     search: '',
     page: 1,
+    totalPages: 0,
   },
   reducers: {
     changeTrending(state, action) {
@@ -19,9 +20,12 @@ const filterSlice = createSlice({
     setSearch(state, action) {
       state.search = action.payload;
       state.page = 1;
+    },
+    setTotalPages(state, action) {
+      state.totalPages = action.payload
     }
   }
 })
 
-export const { changeTrending, changePage, setSearch } = filterSlice.actions;
+export const { changeTrending, changePage, setSearch, setTotalPages } = filterSlice.actions;
 export const filterReducer = filterSlice.reducer;

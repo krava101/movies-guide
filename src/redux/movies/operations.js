@@ -32,6 +32,7 @@ export const fetchSimilarMovies = createAsyncThunk('movies/fetchSimilarMovies', 
     }
 })
 
+//https://api.themoviedb.org/3
 //https://api.themoviedb.org/3/trending/movie/day
 //https://api.themoviedb.org/3/search/movie?include_adult=false&language=en-US&page=1&query={query}
 //https://api.themoviedb.org/3/movie/{movie_id}

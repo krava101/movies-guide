@@ -1,19 +1,19 @@
-.moviesListItem {
+.showListItem {
     width: calc((100% - 80px) / 5);
 }
 
-.moviesListItem a {
+.showListItem a {
     color: #fff;
     font-size: 16pt;
     text-decoration: none;
 }
 
-.moviesListItem img{
+.showListItem img{
     width: 100%;
     background-color: gray;
     border-radius: 10px;
 }
 
-.moviesListItem div {
+.showListItem div {
     padding: 6px 0;
 }
