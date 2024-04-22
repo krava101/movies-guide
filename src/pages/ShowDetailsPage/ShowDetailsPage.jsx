@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectCurrentShow } from "../../redux/currentShow/selectors";
 import { fetchShowInfo } from "../../redux/currentShow/operations";
 import { useEffect } from "react";
-import TVShowPoster from "../../components/TVSHow/TVShowPoster/TVShowPoster";
-import TVShowInfo from "../../components/TVSHow/TVShowInfo/TVShowInfo";
+import TVShowPoster from "../../components/TVShow/TVShowPoster/TVShowPoster";
+import TVShowInfo from "../../components/TVShow/TVShowInfo/TVShowInfo";
 import css from './ShowDetailsPage.module.css';
 
 export default function ShowDetailsPage() {
