@@ -1,13 +1,13 @@
 import { useSearchParams } from 'react-router-dom';
-import { IoSearch } from "react-icons/io5";
-import css from './SearchMovies.module.css';
-import toast from 'react-hot-toast';
 import { useDispatch } from 'react-redux';
 import { setSearch } from '../../redux/filter/slice';
+import { IoSearch } from "react-icons/io5";
+import toast from 'react-hot-toast';
+import css from './SearchBar.module.css';
 
 const notify = (message) => toast.error(message);
 
-export default function SearchMovies() {
+export default function SearchBar() {
   const [searchParams, setSearchParams] = useSearchParams();
   const dispatch = useDispatch();
 

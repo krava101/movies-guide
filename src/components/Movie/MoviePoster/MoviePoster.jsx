@@ -1,6 +1,6 @@
+import { selectCurrentMovie } from '../../../redux/currentMovie/selectors';
 import { useSelector } from 'react-redux';
 import css from './MoviePoster.module.css';
-import { selectCurrentMovie } from '../../redux/currentMovie/selectors';
 
 export default function MoviePoster() {
   const movie = useSelector(selectCurrentMovie);

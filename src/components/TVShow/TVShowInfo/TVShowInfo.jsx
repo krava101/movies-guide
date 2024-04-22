@@ -1,6 +1,6 @@
+import { selectCurrentShow } from '../../../redux/currentShow/selectors';
 import { useSelector } from "react-redux";
-import MovieInfoList from "../MovieInfoList/MovieInfoList";
-import { selectCurrentShow } from '../../redux/currentShow/selectors';
+import MovieInfoList from "../../MovieInfoList/MovieInfoList";
 import css from './TVShowInfo.module.css';
 
 

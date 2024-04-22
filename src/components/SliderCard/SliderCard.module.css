@@ -1,0 +1,20 @@
+.moviesListItem {
+  margin: 0 10px;
+}
+
+.moviesListItem a {
+  color: #fff;
+  font-size: 10pt;
+  text-decoration: none;
+}
+
+.moviesListItem img {
+  width: 100%;
+  height: auto;
+  background-color: gray;
+  border-radius: 10px;
+}
+
+.moviesListItem div {
+  padding: 6px 0;
+}

@@ -9,7 +9,7 @@ export default function MovieCard({ movie }) {
         <img src={'https://image.tmdb.org/t/p/w400/' + movie.poster_path} alt="Movie img" /> 
         <div>
           <p>{movie.title} </p>
-          <p>({movie.release_date.slice(0, 4)})</p>
+          {movie.release_date && <p>({movie.release_date.slice(0, 4)})</p>}
         </div>
       </Link>
     </li>

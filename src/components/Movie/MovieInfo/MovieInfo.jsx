@@ -1,6 +1,6 @@
-import { selectCurrentMovie } from "../../redux/currentMovie/selectors";
+import { selectCurrentMovie } from "../../../redux/currentMovie/selectors";
 import { useSelector } from "react-redux";
-import MovieInfoList from "../MovieInfoList/MovieInfoList";
+import MovieInfoList from "../../MovieInfoList/MovieInfoList";
 import css from './MovieInfo.module.css';
 
 

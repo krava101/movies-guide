@@ -1,9 +1,9 @@
+import { useDispatch, useSelector } from "react-redux";
+import { fetchMovieCast } from "../../../redux/currentMovie/operations";
+import { selectCast } from "../../../redux/currentMovie/selectors";
 import { useEffect } from "react"
 import { useParams } from "react-router-dom";
 import css from './MovieCast.module.css';
-import { useDispatch, useSelector } from "react-redux";
-import { selectCast } from "../../redux/currentMovie/selectors";
-import { fetchMovieCast } from "../../redux/currentMovie/operations";
 
 export default function MovieCast() {
   const { movieId } = useParams();

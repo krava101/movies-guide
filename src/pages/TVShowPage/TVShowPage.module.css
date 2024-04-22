@@ -1,11 +1,15 @@
 .tvPage {
   position: relative;
-  padding-bottom: 40px;
+  padding: 40px;
 }
 
 .loading {
   position: absolute;
-  top: 20px;
-  left: 70px;
-  font-size: 16pt;
+  top: 120px;
+  left: 40px;
+  font-size: 12pt;
+}
+
+.watch{
+  font-size: 24pt;
 }

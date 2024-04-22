@@ -1,0 +1,18 @@
+.mixList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 60px 0;
+  max-width: 1380px;
+  margin: 0 auto;
+}
+
+.notFound {
+  padding: 60px 40px;
+  font-size: 16pt;
+}
+
+.notFound p:first-child {
+  font-size: 28pt;
+}

@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
-import { fetchMovieReviews } from "../../redux/currentMovie/operations";
-import { selectReviews } from "../../redux/currentMovie/selectors";
+import { fetchMovieReviews } from "../../../redux/currentMovie/operations";
+import { selectReviews } from "../../../redux/currentMovie/selectors";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom"
 import css from './MovieReviews.module.css';

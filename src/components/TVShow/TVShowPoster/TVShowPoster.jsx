@@ -1,6 +1,6 @@
+import { selectCurrentShow } from '../../../redux/currentShow/selectors';
 import { useSelector } from 'react-redux';
 import css from './TVShowPoster.module.css';
-import { selectCurrentShow } from '../../redux/currentShow/selectors';
 
 export default function TVShowPoster() {
   const show = useSelector(selectCurrentShow);

@@ -1,15 +1,19 @@
-.moviesPage{
+.homepage {
   position: relative;
-  padding: 40px;
+}
+
+.homeContent{
+  position: relative;
+  padding: 0 40px 40px;
 }
 
 .loading {
   position: absolute;
-  top: 120px;
+  top: 80px;
   left: 40px;
   font-size: 12pt;
 }
 
-.watch {
+.watch{
   font-size: 24pt;
 }

@@ -1,10 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
-import MovieCard from "../MovieCard/MovieCard";
-import css from './SimilarMovieList.module.css';
+import { fetchSimilarMovies } from "../../redux/movies/operations";
 import { selectMovies } from "../../redux/movies/selectors";
 import { useEffect } from "react";
-import { fetchSimilarMovies } from "../../redux/movies/operations";
 import { useParams } from "react-router-dom";
+import MovieCard from "../Movie/MovieCard/MovieCard";
+import css from './SimilarMovieList.module.css';
 
 export default function MovieList() {
   const dispatch = useDispatch();

@@ -1,10 +1,10 @@
+import { changeTrending } from "../../redux/filter/slice";
+import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
+import SearchBar from '../SearchBar/SearchBar'
 import Filter from '../Filter/Filter';
-import SearchMovies from '../SearchMovies/SearchMovies'
 import css from './Navigation.module.css';
 import clsx from "clsx";
-import { useDispatch } from "react-redux";
-import { changeTrending } from "../../redux/filter/slice";
 
 export default function Navigation() {
   const navLink = ({ isActive }) => clsx(css.navLink, isActive && css.active);
@@ -25,7 +25,7 @@ export default function Navigation() {
         TV shows
       </NavLink>
       <Filter/>
-      <SearchMovies/>
+      <SearchBar/>
     </nav>
   )
 }

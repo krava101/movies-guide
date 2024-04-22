@@ -1,24 +1,24 @@
-import { selectIsLoading, selectMovies } from "../../redux/movies/selectors";
+import { selectIsLoading, selectShows  } from "../../../redux/shows/selectors";
 import { useSearchParams } from "react-router-dom";
 import { useSelector } from "react-redux";
-import MovieCard from "../MovieCard/MovieCard";
-import css from './MovieList.module.css';
+import TVShowCard from "../TVShowCard/TVShowCard";
+import css from './TVList.module.css';
 
-export default function MovieList() {
+export default function TvList() {
   const [searchParams] = useSearchParams();
-  const movies = useSelector(selectMovies);
+  const shows = useSelector(selectShows);
   const query = searchParams.get('query');
   const isLoading = useSelector(selectIsLoading);
+
   return (
-    <>{movies.length ? 
-      <ul className={css.moviesList}>
-        {movies.filter(e => e.poster_path).map(e => (<MovieCard key={e.id} movie={e} />))}
+    <>{shows.length ? 
+      <ul className={css.tvList}>
+        {shows.filter(e => e.poster_path).map(e => (<TVShowCard key={e.id} show={e} />))}
       </ul> : !isLoading &&
       <div className={css.notFound}>
         <p>Nothing found for request «{query}»</p>
         <p>We couldn&apos;t find anything. Are there any grammatical errors in the query?</p>
       </div>
-      
     }</>
     
   )

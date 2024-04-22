@@ -3,9 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectCurrentMovie } from "../../redux/currentMovie/selectors";
 import { fetchMovieInfo } from "../../redux/currentMovie/operations";
 import { useEffect } from "react";
-import MovieDetails from "../../components/MovieDetails/MovieDetails";
-import MoviePoster from "../../components/MoviePoster/MoviePoster";
-import MovieInfo from "../../components/MovieInfo/MovieInfo";
+import MovieDetails from "../../components/Movie/MovieDetails/MovieDetails";
+import MoviePoster from "../../components/Movie/MoviePoster/MoviePoster";
+import MovieInfo from "../../components/Movie/MovieInfo/MovieInfo";
 import css from './MovieDetailsPage.module.css';
 
 export default function MovieDetailsPage() {
