@@ -1,18 +1,18 @@
 import { useDispatch, useSelector } from "react-redux";
-import { fetchSimilarMovies } from "../../redux/movies/operations";
-import { selectMovies } from "../../redux/movies/selectors";
+import { fetchSimilarMovies } from "../../../redux/currentMovie/operations";
+import { selectSimilar } from "../../../redux/currentMovie/selectors";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import MovieCard from "../Movie/MovieCard/MovieCard";
+import MovieCard from "../MovieCard/MovieCard";
 import css from './SimilarMovieList.module.css';
 
 export default function MovieList() {
   const dispatch = useDispatch();
-  const movies = useSelector(selectMovies);
+  const movies = useSelector(selectSimilar);
   const { movieId } = useParams();
 
   useEffect(() => {
-    dispatch(fetchSimilarMovies(movieId));
+    movieId && dispatch(fetchSimilarMovies(movieId));
   }, [dispatch, movieId])
   return (
     <ul className={css.moviesList}>

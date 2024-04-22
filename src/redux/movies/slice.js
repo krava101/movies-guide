@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchMovies, fetchQueryMovies, fetchSimilarMovies, } from "./operations";
+import { fetchMovies, fetchQueryMovies } from "./operations";
 
 const handlePending = (state) => {
   state.isLoading = true;
@@ -36,14 +36,6 @@ const moviesSlice = createSlice({
         state.totalPages = action.payload.total_pages;
       })
       .addCase(fetchQueryMovies.rejected, handleRejected)
-      .addCase(fetchSimilarMovies.pending, handlePending)
-      .addCase(fetchSimilarMovies.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.error = null;
-        state.items = action.payload.results;
-        state.totalPages = action.payload.total_pages;
-      })
-      .addCase(fetchSimilarMovies.rejected, handleRejected)
   }
 });
 

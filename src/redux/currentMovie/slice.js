@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchMovieCast, fetchMovieInfo, fetchMovieReviews } from "./operations";
+import { fetchMovieCast, fetchMovieInfo, fetchMovieReviews, fetchSimilarMovies } from "./operations";
 
 const handlePending = (state) => {
   state.isLoading = true;
@@ -16,8 +16,9 @@ const currentMovieSlice = createSlice({
     movie: null,
     cast: [],
     reviews: [],
+    similar: [],
     isLoading: false,
-    error: null
+    error: null,
   },
   reducers: {
     clearMovie(state){
@@ -26,6 +27,7 @@ const currentMovieSlice = createSlice({
       state.movie = null;
       state.cast = [];
       state.reviews = [];
+      state.similar = [];
     }
   },
   extraReducers: builder => {
@@ -37,6 +39,7 @@ const currentMovieSlice = createSlice({
         state.movie = action.payload;
         state.cast = [];
         state.reviews = [];
+        state.similar = [];
       })
       .addCase(fetchMovieInfo.rejected, handleRejected)
       .addCase(fetchMovieCast.pending, handlePending)
@@ -53,6 +56,13 @@ const currentMovieSlice = createSlice({
         state.reviews = action.payload;
       })
       .addCase(fetchMovieReviews.rejected, handleRejected)
+      .addCase(fetchSimilarMovies.pending, handlePending)
+      .addCase(fetchSimilarMovies.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        state.similar = action.payload;
+      })
+      .addCase(fetchSimilarMovies.rejected, handleRejected)
   }
 });
 

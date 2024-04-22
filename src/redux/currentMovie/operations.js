@@ -27,3 +27,12 @@ export const fetchMovieReviews = createAsyncThunk('currentMovie/fetchMovieReview
       return thunkAPI.rejectWithValue(e.message);
     }
 })
+
+export const fetchSimilarMovies = createAsyncThunk('currentMovie/fetchSimilarMovies', async (id, thunkAPI) => {
+  try {
+      const response = await axios.get(`/movie/${id}/similar`);
+      return response.data.results;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
+    }
+})

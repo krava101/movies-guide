@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import TVShowPoster from "../../components/TVShow/TVShowPoster/TVShowPoster";
 import TVShowInfo from "../../components/TVShow/TVShowInfo/TVShowInfo";
 import css from './ShowDetailsPage.module.css';
+import TVShowDetails from "../../components/TVShow/TVShowDetails/TVShowDetails";
 
 export default function ShowDetailsPage() {
   const dispatch = useDispatch();
@@ -29,7 +30,7 @@ export default function ShowDetailsPage() {
           <TVShowPoster/>
           <TVShowInfo/>
         </div>
-        {/* <MovieDetails /> */}
+        <TVShowDetails />
       </section>}
     </>
   )

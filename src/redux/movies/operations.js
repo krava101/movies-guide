@@ -23,14 +23,6 @@ export const fetchQueryMovies = createAsyncThunk('movies/fetchQueryMovies', asyn
     }
 })
 
-export const fetchSimilarMovies = createAsyncThunk('movies/fetchSimilarMovies', async (id, thunkAPI) => {
-  try {
-      const response = await axios.get(`/movie/${id}/similar`);
-      return response.data;
-    } catch (e) {
-      return thunkAPI.rejectWithValue(e.message);
-    }
-})
 
 //https://api.themoviedb.org/3/movie/upcoming
 //https://api.themoviedb.org/3/trending/movie/day

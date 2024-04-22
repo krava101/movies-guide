@@ -1,11 +1,11 @@
-.reviewsList {
+.reviewsList{
     display: flex;
     flex-direction: column;
     max-width: 900px;
     gap: 20px;
 }
 
-.reviewsList li {
+.reviewsList li{
     padding: 20px 0;
     background-color: #414141;
     border-radius: 10px;
