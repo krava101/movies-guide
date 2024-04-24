@@ -1,12 +1,14 @@
 .filterWrapper{
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 20px;
   padding-top: 10px;
 }
 
 .filter{
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 10px;
 }
@@ -30,4 +32,24 @@
 .filterLink.active {
   background-color: #626262;
   opacity: 0.9;
+}
+
+@media screen and (max-width: 768px) {
+  .filterLink{
+    font-size: 16pt;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .filterLink{
+    font-size: 15pt;
+  }
+}
+
+@media screen and (max-width: 400px) {
+
+  .filterLink {
+    padding: 3px 8px;
+    font-size: 14pt;
+  }
 }

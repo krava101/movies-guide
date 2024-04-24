@@ -22,4 +22,13 @@
     padding: 40px 0 30px;
     gap: 12px;
   }
+
+  .notFound {
+    padding: 20px 10px;
+    font-size: 16pt;
+  }
+
+  .notFound p:first-child {
+    font-size: 20pt;
+  }
 }

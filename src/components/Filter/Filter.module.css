@@ -21,3 +21,12 @@
   opacity: 0.9;
 }
 
+@media screen and (max-width: 500px) {
+  .top {
+    font-size: 14pt;
+  }
+
+  .filterLink {
+    padding: 3px 8px;
+  }
+}

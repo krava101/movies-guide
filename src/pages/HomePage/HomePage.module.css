@@ -48,7 +48,7 @@
     width: 140%;
   }
 
-  .homeFilter p:first-child {
+  p.watch {
     max-width: 90%;
     font-size: 16pt;
   }
@@ -74,7 +74,7 @@
 }
 
 @media screen and (max-width: 375px) {
-  .homeFilter p:first-child, .homeFilter p{
+  p.watch, .homeFilter p{
     max-width: 90%;
     font-size: 13pt;
   }

@@ -73,8 +73,10 @@ export default function MoviesPage() {
     <div className={css.moviesPage}>
       <p className={css.watch}>Discovr new movies</p>
       <MainFilter/>
-      {isLoading && <p className={css.loading}>Loading...</p>}
-      <MoviesList />
+      <div className={css.movieListWrapper}>
+        {isLoading && <p className={css.loading}>Loading...</p>}
+        <MoviesList />
+      </div>
       {totalPages > 1 && <PagePagination />}
       <Toaster position="top-right" reverseOrder={false} />
     </div>
