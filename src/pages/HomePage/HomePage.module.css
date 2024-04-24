@@ -9,11 +9,27 @@
 
 .loading {
   position: absolute;
-  top: 80px;
+  top: 165px;
   left: 40px;
   font-size: 12pt;
 }
 
 .watch{
   font-size: 24pt;
+  margin-bottom: 10px;
 }
+
+.homeFilter{
+  background-color: rgb(225, 73, 3);
+  padding: 20px 50px;
+  width: 110%;
+  transform: translateX(-40px);
+  box-shadow: 0px 10px 15px #00000022, 0px -10px 15px #00000022;
+}
+
+.homeFilter button{
+  text-decoration: underline;
+  background-color: transparent;
+  opacity: 0.9;
+}
+

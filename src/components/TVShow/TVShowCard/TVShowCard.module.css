@@ -10,6 +10,7 @@
 
 .showListItem img{
     width: 100%;
+    min-height: 324px;
     background-color: gray;
     border-radius: 10px;
 }

@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchQueryShows, fetchShows } from "./operations";
+import { fetchNowPlayingShows, fetchPopularShows, fetchQueryShows, fetchShows, fetchTopRatedShows, fetchUpcomingShows } from "./operations";
 
 const handlePending = (state) => {
   state.isLoading = true;
@@ -36,6 +36,38 @@ const showsSlice = createSlice({
         state.totalPages = action.payload.total_pages;
       })
       .addCase(fetchQueryShows.rejected, handleRejected)
+      .addCase(fetchPopularShows.pending, handlePending)
+      .addCase(fetchPopularShows.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        state.items = action.payload.results;
+        state.totalPages = action.payload.total_pages;
+      })
+      .addCase(fetchPopularShows.rejected, handleRejected)
+      .addCase(fetchNowPlayingShows.pending, handlePending)
+      .addCase(fetchNowPlayingShows.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        state.items = action.payload.results;
+        state.totalPages = action.payload.total_pages;
+      })
+      .addCase(fetchNowPlayingShows.rejected, handleRejected)
+      .addCase(fetchTopRatedShows.pending, handlePending)
+      .addCase(fetchTopRatedShows.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        state.items = action.payload.results;
+        state.totalPages = action.payload.total_pages;
+      })
+      .addCase(fetchTopRatedShows.rejected, handleRejected)
+      .addCase(fetchUpcomingShows.pending, handlePending)
+      .addCase(fetchUpcomingShows.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        state.items = action.payload.results;
+        state.totalPages = action.payload.total_pages;
+      })
+      .addCase(fetchUpcomingShows.rejected, handleRejected)
   }
 });
 

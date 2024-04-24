@@ -1,7 +1,13 @@
-.top {
+.filterWrapper{
   display: flex;
   align-items: center;
-  font-size: 18pt;
+  gap: 20px;
+  padding-top: 10px;
+}
+
+.filter{
+  display: flex;
+  align-items: center;
   gap: 10px;
 }
 
@@ -13,10 +19,15 @@
   border-radius: 6px;
   text-decoration: none;
   opacity: 0.4;
+  font-size: 18pt;
 }
 
-.filterLink:hover, .filterLink.active{
-  text-decoration: none;
+.filterLink:hover {
+  background-color: #626262;
+  opacity: 0.9;
+}
+
+.filterLink.active {
   background-color: #626262;
   opacity: 0.9;
 }

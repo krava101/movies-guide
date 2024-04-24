@@ -1,8 +1,7 @@
-import { changeTrending } from "../../redux/filter/slice";
+import { changeFilter } from "../../redux/filter/slice";
 import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import SearchBar from '../SearchBar/SearchBar'
-import Filter from '../Filter/Filter';
 import css from './Navigation.module.css';
 import clsx from "clsx";
 
@@ -11,7 +10,7 @@ export default function Navigation() {
   const dispatch = useDispatch();
 
   const handleRefresh = () => {
-    dispatch(changeTrending('day'));
+    dispatch(changeFilter('day'));
   }
   return (
     <nav className={css.nav}>
@@ -24,7 +23,6 @@ export default function Navigation() {
       <NavLink to="/shows" className={navLink} onClick={handleRefresh}>
         TV shows
       </NavLink>
-      <Filter/>
       <SearchBar/>
     </nav>
   )

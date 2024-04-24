@@ -19,11 +19,38 @@ export const fetchQueryShows = createAsyncThunk('shows/fetchQueryShows', async (
     }
 })
 
-// export const fetchSimilarMovies = createAsyncThunk('movies/fetchSimilarMovies', async (id, thunkAPI) => {
-//   try {
-//       const response = await axios.get(`/movie/${id}/similar`);
-//       return response.data;
-//     } catch (e) {
-//       return thunkAPI.rejectWithValue(e.message);
-//     }
-// })
+export const fetchPopularShows = createAsyncThunk('shows/fetchPopularShows', async (page, thunkAPI) => {
+    try {
+      const response = await axios.get(`/tv/popular?page=${page}`);
+      return response.data;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
+    }
+}); 
+
+export const fetchTopRatedShows = createAsyncThunk('shows/fetchTopRatedShows', async (page, thunkAPI) => {
+    try {
+      const response = await axios.get(`/tv/top_rated?page=${page}`);
+      return response.data;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
+    }
+});
+
+export const fetchNowPlayingShows = createAsyncThunk('shows/fetchNowPlayingShows', async (page, thunkAPI) => {
+    try {
+      const response = await axios.get(`/tv/on_the_air?page=${page}`);
+      return response.data;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
+    }
+});
+
+export const fetchUpcomingShows = createAsyncThunk('shows/fetchUpcomingShows', async (page, thunkAPI) => {
+    try {
+      const response = await axios.get(`/tv/airing_today?page=${page}`);
+      return response.data;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
+    }
+});

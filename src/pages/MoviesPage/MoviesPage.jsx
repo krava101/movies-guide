@@ -1,48 +1,78 @@
-import { changePage, changeTrending, setTotalPages } from "../../redux/filter/slice";
-import { selectTrending, selectPage, selectSearch } from "../../redux/filter/selectors";
+import { fetchMovies, fetchNowPlayingMovies, fetchPopularMovies, fetchQueryMovies, fetchTopRatedMovies, fetchUpcomingMovies } from "../../redux/movies/operations";
+import { changePage, changeFilter, setTotalPages } from "../../redux/filter/slice";
+import { selectFilter, selectPage, selectSearch } from "../../redux/filter/selectors";
 import { selectIsLoading, selectTotalPages } from "../../redux/movies/selectors";
-import { fetchMovies, fetchQueryMovies } from "../../redux/movies/operations";
 import { useDispatch, useSelector } from "react-redux";
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { clearMovie } from "../../redux/currentMovie/slice";
+import { mainFilter } from "../../redux/filter/constants";
 import { useEffect } from "react";
 import { clearShow } from "../../redux/currentShow/slice";
 import { Toaster } from 'react-hot-toast';
 import PagePagination from "../../components/PagePagination/PagePagination";
 import MoviesList from "../../components/Movie/MovieList/MovieList";
+import MainFilter from "../../components/MainFilter/MainFilter";
 import css from './MoviesPage.module.css';
 
 
-export default function HomePage() {
+export default function MoviesPage() {
   const dispatch = useDispatch();
   const isLoading = useSelector(selectIsLoading);
   const [searchParams, setSearchParams] = useSearchParams();
   const selectedPage = useSelector(selectPage);
 
+  const navigate = useNavigate();
+
   const totalPages = useSelector(selectTotalPages);
-  const selectedTrending = useSelector(selectTrending);
+  const selectedFilter = useSelector(selectFilter);
   const selectedSearch = useSelector(selectSearch);
 
   const search = searchParams.get("query") ? searchParams.get("query") : selectedSearch;
   const page = searchParams.get("page") ? searchParams.get("page") : selectedPage;
-  const trending = searchParams.get("trending") ? searchParams.get("trending") : selectedTrending;
-  
+  const filter = searchParams.get("filter") ? searchParams.get("filter") : selectedFilter;
+
+  function filtering(filter) {
+    switch (filter) {
+      case mainFilter.day:
+        dispatch(fetchMovies({ trending: filter, page }));
+        break;
+      case mainFilter.week:
+        dispatch(fetchMovies({ trending: filter, page }));
+        break;
+      case mainFilter.popular:
+        dispatch(fetchPopularMovies(page));
+        break;
+      case mainFilter.rated:
+        dispatch(fetchTopRatedMovies(page));
+        break;
+      case mainFilter.playing:
+        dispatch(fetchNowPlayingMovies(page));
+        break;
+      case mainFilter.upcoming:
+        dispatch(fetchUpcomingMovies(page));
+        break;
+      default:
+        navigate('/');
+        dispatch(changeFilter(mainFilter.day));
+    }
+  }
   
   useEffect(() => {
-    !search && setSearchParams({ trending: trending, page: page });
+    !search && setSearchParams({ filter: filter, page: page });
     dispatch(clearMovie());
     dispatch(clearShow());
-    dispatch(changeTrending(trending));
+    dispatch(changeFilter(filter));
     dispatch(changePage(page));
     dispatch(setTotalPages(totalPages));
-    search ? dispatch(fetchQueryMovies({ search, page })) : dispatch(fetchMovies({ trending, page }));
-  }, [dispatch, search, trending, page, setSearchParams, totalPages]);
+    search ? dispatch(fetchQueryMovies({ search, page })) : filtering(filter);
+  }, [dispatch, search, filter, page, setSearchParams, totalPages]);
 
 
   
   return (
     <div className={css.moviesPage}>
       <p className={css.watch}>Discovr new movies</p>
+      <MainFilter/>
       {isLoading && <p className={css.loading}>Loading...</p>}
       <MoviesList />
       {totalPages > 1 && <PagePagination />}

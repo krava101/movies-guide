@@ -1,4 +1,4 @@
-import { selectPage, selectTotalPages, selectTrending } from '../../redux/filter/selectors';
+import { selectPage, selectTotalPages, selectFilter } from '../../redux/filter/selectors';
 import { selectIsLoading as  selectIsShowLoading } from '../../redux/shows/selectors'
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import { useEffect, useRef, useState } from "react";
@@ -22,9 +22,9 @@ export default function PagePagination() {
   const totalPages = selectedTotalPages > 501 ? 500 : selectedTotalPages;
 
   const selectedPage = useSelector(selectPage);
-  const selectedTrending = useSelector(selectTrending);
+  const selectedFilter = useSelector(selectFilter);
   const page = searchParams.get('page') ? searchParams.get('page') : selectedPage;
-  const trending = searchParams.get('trending') ? searchParams.get('trending') : selectedTrending;
+  const filter = searchParams.get('filter') ? searchParams.get('filter') : selectedFilter;
 
   useEffect(() => {
     if (!isMoviesLoading && !isTVShowsLoading) {
@@ -43,8 +43,12 @@ export default function PagePagination() {
   const setAllParams = (page) => {
     searchParams.get('query') ?
       setSearchParams({ query: searchParams.get('query'), page: page,} ):
-      setSearchParams({ trending: trending, page: page,});
+      setSearchParams({ filter: filter, page: page,});
     dispatch(changePage(page));
+    window.scrollTo({
+      top: 0, 
+      behavior: 'smooth',
+    })
   }
 
   const handleMainPag = (event) => {

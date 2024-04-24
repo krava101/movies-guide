@@ -23,7 +23,45 @@ export const fetchQueryMovies = createAsyncThunk('movies/fetchQueryMovies', asyn
     }
 })
 
+export const fetchPopularMovies = createAsyncThunk('movies/fetchPopularMovies', async (page, thunkAPI) => {
+  try {
+      const response = await axios.get(`/movie/popular?page=${page}`);
+      return response.data;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
+    }
+})
 
+export const fetchTopRatedMovies = createAsyncThunk('movies/fetchTopRatedMovies', async (page, thunkAPI) => {
+  try {
+      const response = await axios.get(`/movie/top_rated?page=${page}`);
+      return response.data;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
+    }
+})
+
+export const fetchNowPlayingMovies = createAsyncThunk('movies/fetchNowPlayingMovies', async (page, thunkAPI) => {
+  try {
+      const response = await axios.get(`/movie/now_playing?page=${page}`);
+      return response.data;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
+    }
+})
+
+export const fetchUpcomingMovies = createAsyncThunk('movies/fetchUpcomingMovies', async (page, thunkAPI) => {
+  try {
+      const response = await axios.get(`/movie/upcoming?page=${page}`);
+      return response.data;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
+    }
+})
+
+//https://api.themoviedb.org/3/movie/now_playing
+//https://api.themoviedb.org/3/movie/popular
+//https://api.themoviedb.org/3/movie/top_rated
 //https://api.themoviedb.org/3/movie/upcoming
 //https://api.themoviedb.org/3/trending/movie/day
 //https://api.themoviedb.org/3/search/movie?include_adult=false&language=en-US&page=1&query={query}

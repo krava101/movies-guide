@@ -29,7 +29,7 @@ export default function MovieDetailsPage() {
           <MoviePoster/>
           <MovieInfo/>
         </div>
-        <MovieDetails />
+          <MovieDetails />
       </section>}
     </>
   )

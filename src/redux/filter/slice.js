@@ -3,14 +3,14 @@ import { createSlice } from "@reduxjs/toolkit";
 const filterSlice = createSlice({
   name: 'filter',
   initialState: {
-    trending: 'day',
+    filter: 'day',
     search: '',
     page: 1,
     totalPages: 0,
   },
   reducers: {
-    changeTrending(state, action) {
-      state.trending = action.payload;
+    changeFilter(state, action) {
+      state.filter = action.payload;
       state.search = '';
       state.page = 1;
     },
@@ -27,5 +27,5 @@ const filterSlice = createSlice({
   }
 })
 
-export const { changeTrending, changePage, setSearch, setTotalPages } = filterSlice.actions;
+export const { changeFilter, changePage, setSearch, setTotalPages } = filterSlice.actions;
 export const filterReducer = filterSlice.reducer;
