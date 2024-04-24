@@ -17,3 +17,25 @@
 .moviesListItem div {
     padding: 6px 0;
 }
+
+@media screen and (max-width: 768px) {
+    .moviesListItem {
+        width: calc((100% - 40px) / 4);
+    }
+
+    .moviesListItem a {
+        font-size: 12pt;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .moviesListItem {
+        width: calc((100% - 24px) / 3);
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .moviesListItem {
+        width: calc((100% - 12px) / 2);
+    }
+}

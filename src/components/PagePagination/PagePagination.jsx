@@ -14,6 +14,7 @@ export default function PagePagination() {
   const [sum, setSum] = useState(0);
   const [more, setMore] = useState(true);
   const [searchParams, setSearchParams] = useSearchParams();
+  const [pagesNum, setPagesNum] = useState(9);
 
   const isMoviesLoading = useSelector(selectIsLoading);
   const isTVShowsLoading = useSelector(selectIsShowLoading);
@@ -27,6 +28,7 @@ export default function PagePagination() {
   const filter = searchParams.get('filter') ? searchParams.get('filter') : selectedFilter;
 
   useEffect(() => {
+    window.screen.width <= 500 && setPagesNum(5);
     if (!isMoviesLoading && !isTVShowsLoading) {
       const mainPag = pagination.current.children;
       if (mainPag) {
@@ -36,9 +38,10 @@ export default function PagePagination() {
         mainPag[mainPag.length - 1] && mainPag[mainPag.length - 1].textContent < totalPages ?
           setMore(true) : setMore(false);
       }
-      page < 9 ? setSum(0) : setSum(Math.floor(+page - 5));
+      const centerPage = pagesNum < 9 ? 3 : 5;
+      page < pagesNum ? setSum(0) : setSum(Math.floor(+page - centerPage));
     }
-  }, [page, isMoviesLoading, isTVShowsLoading, totalPages, sum]);
+  }, [page, isMoviesLoading, isTVShowsLoading, totalPages, sum, pagesNum]);
   
   const setAllParams = (page) => {
     searchParams.get('query') ?
@@ -73,16 +76,16 @@ export default function PagePagination() {
     <>{!isMoviesLoading && !isTVShowsLoading &&
       <div className={css.pagination}>
         {page > 1 && <button className={css.pagPrev} onClick={handlePrevPage}><BsChevronLeft /></button>}
-        {page > 8 && <>
+        {page > pagesNum-1 && <>
           <button className={css.pagTotal} data-page='1' onClick={toFirstLastPage}>1</button>
           <p className={css.pagElse}>...</p>
         </>}
         <ul ref={pagination} className={css.pagList} onClick={handleMainPag}>
-          {totalPages > 9 ?
-            Array.from({ length: 9 }).map((_, i) => (1 + i + sum) <= totalPages ? <button key={1 + i} data-page={1 + i + sum}>{1 + i + sum}</button> : null) :
+          {totalPages > pagesNum ?
+            Array.from({ length: pagesNum }).map((_, i) => (1 + i + sum) <= totalPages ? <button key={1 + i} data-page={1 + i + sum}>{1 + i + sum}</button> : null) :
             Array.from({ length: totalPages }).map((_, i) => <button key={1 + i} data-page={1 + i + sum}>{1 + i + sum}</button>)}
         </ul>
-           {totalPages > 9 && more &&<>
+           {totalPages > pagesNum && more &&<>
               <p className={css.pagElse}>...</p>
               <button className={css.pagTotal} data-page={totalPages} onClick={toFirstLastPage}>{totalPages}</button>
            </>}

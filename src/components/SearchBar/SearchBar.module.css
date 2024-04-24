@@ -30,3 +30,15 @@
   border-left: none;
   color: #8a8a8a;
 }
+
+@media screen and (max-width: 768px) {
+  .form input{
+    width: 230px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .form input {
+    width: 200px;
+  }
+}

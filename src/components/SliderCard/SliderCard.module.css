@@ -18,3 +18,9 @@
 .moviesListItem div {
   padding: 6px 0;
 }
+
+@media screen and (max-width: 768px) {
+  .moviesListItem {
+    margin: 0 6px;
+  }
+}

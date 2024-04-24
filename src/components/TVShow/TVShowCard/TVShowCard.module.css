@@ -10,11 +10,33 @@
 
 .showListItem img{
     width: 100%;
-    min-height: 324px;
+    max-height: 324px;
     background-color: gray;
     border-radius: 10px;
 }
 
 .showListItem div {
     padding: 6px 0;
+}
+
+@media screen and (max-width: 768px) {
+    .showListItem {
+        width: calc((100% - 40px) / 4);
+    }
+
+    .showListItem a {
+        font-size: 12pt;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .showListItem {
+        width: calc((100% - 24px) / 3);
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .showListItem {
+        width: calc((100% - 12px) / 2);
+    }
 }

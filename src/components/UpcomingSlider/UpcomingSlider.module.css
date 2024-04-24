@@ -22,3 +22,31 @@
 .slider button:last-child{
   right: 28px;
 }
+
+@media screen and (max-width: 768px) {
+  .slider{
+    padding: 30px 40px 15px;
+  }
+
+  .slider button {
+    top: 38%;
+  }
+
+  .slider button::before{
+    font-size: 24pt;
+  }
+
+  .slider button:first-child {
+    left: 8px;
+  }
+
+  .slider button:last-child {
+    right: 20px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .slider {
+      padding: 30px 40px 5px;
+    }
+}

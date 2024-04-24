@@ -53,3 +53,50 @@
   color: #fff;
   transition: background-color .2s linear;
 }
+
+@media screen and (max-width: 768px) {
+  .pagination {
+    gap: 10px;
+  }
+
+  .pagination button:not(.pagPrev, .pagNext){
+    height: 30px;
+    font-size: 13pt;
+  }
+
+  .pagElse {
+    font-size: 14pt;
+  }
+
+  .pagPrev, .pagNext {
+    width: 30px;
+    height: 30px;
+    font-size: 13pt;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .pagination {
+    gap: 8px;
+  }
+
+  .pagList {
+    gap: 8px;
+  }
+
+  .pagination button:not(.pagPrev, .pagNext) {
+    height: 30px;
+    font-size: 12pt;
+    padding: 6px;
+  }
+
+  .pagElse {
+    font-size: 13pt;
+  }
+  
+  .pagPrev, .pagNext {
+    width: 26px;
+    height: 26px;
+    font-size: 12pt;
+  }
+}

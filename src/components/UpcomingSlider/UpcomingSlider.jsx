@@ -19,7 +19,45 @@ export default function UpcomingSlider() {
     slidesToShow: 7,
     slidesToScroll: 7,
     draggable: false,
-    cssEase: "ease-out"
+    cssEase: "ease-out",
+    responsive: [{
+      breakpoint: 1025,
+      settings: {
+        slidesToShow: 6,
+        slidesToScroll: 6,
+      }
+    },
+    {
+      breakpoint: 769,
+      settings: {
+        slidesToShow: 5,
+        slidesToScroll: 5,
+      }
+      }
+    ,
+    {
+      breakpoint: 601,
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 4,
+      }
+    }
+    ,
+    {
+      breakpoint: 501,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+      }
+    },
+    {
+      breakpoint: 376,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+      }
+    }
+    ]
   };
 
 

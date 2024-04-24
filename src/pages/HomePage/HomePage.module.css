@@ -22,7 +22,7 @@
 .homeFilter{
   background-color: rgb(225, 73, 3);
   padding: 20px 50px;
-  width: 110%;
+  width: 120%;
   transform: translateX(-40px);
   box-shadow: 0px 10px 15px #00000022, 0px -10px 15px #00000022;
 }
@@ -33,3 +33,49 @@
   opacity: 0.9;
 }
 
+@media screen and (max-width: 768px) {
+  .homeContent {
+    padding: 0 20px 20px;
+  }
+
+  .watch {
+    font-size: 20pt;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .homeFilter {
+    width: 140%;
+  }
+
+  .homeFilter p:first-child {
+    max-width: 90%;
+    font-size: 16pt;
+  }
+
+  .homeFilter p {
+    font-size: 14pt;
+  }
+
+  .homeFilter button {
+    padding: 3px 8px;
+  }
+
+  .loading {
+    top: 125px;
+    left: 30px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .homeContent {
+    padding: 0 10px 20px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .homeFilter p:first-child, .homeFilter p{
+    max-width: 90%;
+    font-size: 13pt;
+  }
+}
