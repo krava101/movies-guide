@@ -1,15 +1,41 @@
 .tvPage {
-  position: relative;
   padding: 40px;
+}
+
+.showListWrapper{
+  position: relative;
 }
 
 .loading {
   position: absolute;
-  top: 165px;
-  left: 40px;
+  top: 20px;
   font-size: 12pt;
 }
 
 .watch{
   font-size: 24pt;
+}
+
+@media screen and (max-width: 768px) {
+
+  .watch {
+    font-size: 20pt;
+  }
+
+  .loading {
+    top: 0px;
+    opacity: 0.6;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .watch {
+    font-size: 18pt;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .watch {
+    font-size: 16pt;
+  }
 }

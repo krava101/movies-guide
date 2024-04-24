@@ -10,8 +10,8 @@
 }
 
 .castList img{
-    width: 200px;
-    height: 300px;
+    width: 100%;
+    height: auto;
     border-radius: 10px;
     background-color: #545454;
 }
@@ -19,8 +19,8 @@
 .castList span{
     display: grid;
     place-items: center;
-    width: 200px;
-    height: 300px;
+    width: 100%;
+    aspect-ratio: 4/6;
     border-radius: 10px;
     background-color: #545454;
 
@@ -36,4 +36,22 @@
 .castList p:last-child{
     font-size: 14pt;
     opacity: 0.8;
+}
+
+@media screen and (max-width: 1024px) {
+    .castList li {
+        width: calc((100% - 80px)/4);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .castList li {
+        width: calc((100% - 60px)/3);
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .castList li {
+        width: calc((100% - 40px)/2);
+    }
 }

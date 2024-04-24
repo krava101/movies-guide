@@ -4,7 +4,7 @@
   font-size: 18pt;
 }
 
-.movieInfo {
+.movieInfo, .overview {
   font-size: 16pt;
   width: 100%;
   max-width: 800px;
@@ -14,9 +14,6 @@
   margin-bottom: 15px;
 }
 
-.movieInfo p span {
+.movieInfo p span, .overview span {
   opacity: 0.7;
-}
-
-@media screen and (max-width: 800px) {
 }

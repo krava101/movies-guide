@@ -8,6 +8,7 @@ export default function TVShowInfo() {
   const show = useSelector(selectCurrentShow);
 
   return (
+    <>
     <div className={css.showInfo}> 
       <p>Raiting: <span> <a href="https://www.themoviedb.org/">TMDb:</a> &nbsp;{show.vote_average}</span></p>
       <p>Status: <span>{show.in_production ? 'In production' : 'Completed'}</span></p>
@@ -19,5 +20,6 @@ export default function TVShowInfo() {
       {show.episode_run_time.length > 0 && <p>Time: <span>{show.episode_run_time[0]} min.</span></p>}
       <p className={css.overview}>Overview: <span>{show.overview}</span></p>
     </div>
+    </>
   )
 }

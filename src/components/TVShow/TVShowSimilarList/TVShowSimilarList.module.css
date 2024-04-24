@@ -3,7 +3,13 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
-  padding: 40px;
-  max-width: 1660px;
+  padding: 0px;
+  max-width: 1380px;
   margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+  .similarList {
+    gap: 10px;
+  }
 }

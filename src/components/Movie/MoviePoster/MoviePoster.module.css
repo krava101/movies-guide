@@ -1,5 +1,5 @@
 .moviePoster img {
-  width: 400px;
+  width: 300px;
   min-width: 250px;
   border-radius: 6px;
 }
@@ -16,4 +16,17 @@
   text-decoration: none;
   opacity: 0.8;
   margin-top: 15px;
+}
+
+@media screen and (max-width: 768px) {
+  .moviePoster a{
+    display: inline-flex;
+    justify-content: center;
+    width: 145px;
+    font-size: 12pt;
+  }
+
+  .moviePoster a:not(:last-child){
+    margin-right: 10px;
+  }
 }

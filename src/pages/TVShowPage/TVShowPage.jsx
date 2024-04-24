@@ -68,9 +68,11 @@ export default function TVPage() {
   return (
     <div className={css.tvPage}>
       <p className={css.watch}>Discovr new TV shows</p>
-      <MainFilter/>
-      {isLoading && <p className={css.loading}>Loading...</p>}
-      <TVList />
+      <MainFilter />
+      <div className={css.showListWrapper}>
+        {isLoading && <p className={css.loading}>Loading...</p>}
+        <TVList />
+      </div>
       {totalPages > 1 && <PagePagination/>}
       <Toaster position="top-right" reverseOrder={false} />
     </div>

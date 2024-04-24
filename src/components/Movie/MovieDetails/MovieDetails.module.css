@@ -1,9 +1,3 @@
-
-.backLink {
-  color: #fff;
-  font-size: 18pt;
-}
-
 .movieSubInfo {
   display: flex;
   flex-direction: column;
@@ -25,4 +19,25 @@
 
 .movieNav a.active {
   color: #ff4800;
+}
+
+@media screen and (max-width: 520px) {
+  .movieNav a{
+    font-size: 18pt;
+  }
+
+  .movieSubInfo{
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .movieNav a {
+    font-size: 17pt;
+  }
+
+  .movieNav {
+    gap: 10px;
+    margin-bottom: 10px;
+  }
 }

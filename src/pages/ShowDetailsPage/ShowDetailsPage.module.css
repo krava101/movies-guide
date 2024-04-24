@@ -9,8 +9,7 @@
 
 .showInfo {
   display: flex;
-  gap: 120px;
-  background-image: url();
+  gap: 60px;
 }
 
 .title {
@@ -18,10 +17,39 @@
   margin-bottom: 20px;
 }
 
-@media screen and (max-width: 800px) {
-  .showInfo {
-    flex-wrap: wrap;
-    gap: 60px;
+@media screen and (max-width: 768px) {
+
+  .show {
+    padding: 20px;
   }
 
+  .title {
+    font-size: 28pt;
+    margin-bottom: 20px;
+  }
+
+  .backLink {
+    font-size: 16pt;
+  }
+
+  .showInfo {
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+}
+
+
+@media screen and (max-width: 425px) {
+  .show {
+    padding: 10px;
+  }
+
+  .title {
+    font-size: 24pt;
+    margin-bottom: 10px;
+  }
+
+  .backLink {
+    font-size: 14pt;
+  }
 }
