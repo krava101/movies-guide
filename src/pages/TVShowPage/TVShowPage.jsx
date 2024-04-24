@@ -67,7 +67,7 @@ export default function TVPage() {
 
   return (
     <div className={css.tvPage}>
-      <p className={css.watch}>Discovr new TV shows</p>
+      <p className={css.watch}>Discover new TV shows</p>
       <MainFilter />
       <div className={css.showListWrapper}>
         {isLoading && <p className={css.loading}>Loading...</p>}

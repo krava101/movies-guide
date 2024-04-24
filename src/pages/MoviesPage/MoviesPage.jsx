@@ -71,7 +71,7 @@ export default function MoviesPage() {
   
   return (
     <div className={css.moviesPage}>
-      <p className={css.watch}>Discovr new movies</p>
+      <p className={css.watch}>Discover new movies</p>
       <MainFilter/>
       <div className={css.movieListWrapper}>
         {isLoading && <p className={css.loading}>Loading...</p>}
