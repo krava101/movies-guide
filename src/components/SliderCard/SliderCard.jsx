@@ -3,7 +3,7 @@ import css from './SliderCard.module.css';
 
 export default function SliderCard({movie}) {
   return (
-    <div className={css.moviesListItem}>
+    <div className={css.sliderItem}>
       <Link to={`/movie/` + movie.id}>
         <img src={'https://image.tmdb.org/t/p/w400/' + movie.poster_path} alt="Movie img" /> 
         <div>

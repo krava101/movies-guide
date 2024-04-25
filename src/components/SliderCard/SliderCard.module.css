@@ -1,26 +1,32 @@
-.moviesListItem {
+.sliderItem {
   margin: 0 10px;
+  transition: transform .2s linear;
 }
 
-.moviesListItem a {
+.sliderItem a {
   color: #fff;
   font-size: 10pt;
   text-decoration: none;
 }
 
-.moviesListItem img {
+.sliderItem img {
   width: 100%;
   height: auto;
   background-color: gray;
   border-radius: 10px;
 }
 
-.moviesListItem div {
+.sliderItem:hover, .sliderItem:focus{
+  position: relative;
+  transform: translateY(10px);
+}
+
+.sliderItem div {
   padding: 6px 0;
 }
 
 @media screen and (max-width: 768px) {
-  .moviesListItem {
+  .sliderItem {
     margin: 0 6px;
   }
 }

@@ -12,6 +12,12 @@
     width: 100%;
     background-color: gray;
     border-radius: 10px;
+    transition: transform .3s linear;
+}
+
+.moviesListItem:hover img,
+.moviesListItem:focus img{
+    transform: scale(1.03);
 }
 
 .moviesListItem div {
