@@ -14,7 +14,7 @@ const TVShowReviews = lazy(() => import("../TVShow/TVShowReviews/TVShowReviews")
 const MovieCast = lazy(() => import("../Movie/MovieCast/MovieCast"));
 const HomePage = lazy(() => import("../../pages/HomePage/HomePage"));
 const NotFound = lazy (() => import("../../pages/NotFound/NotFound"));
-const TVShowPage = lazy(()=> import("../../pages/TVShowPage/TVShowPage"));
+const TVShowPage = lazy(() => import("../../pages/TVShowPage/TVShowPage"));
 
 const App = () => {  
   return (

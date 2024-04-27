@@ -8,22 +8,24 @@
 .filterLink {
   padding: 5px 10px;
   color: #fff;
-  background-color: #636363;
+  background-color: transparent;
   border: none;
+  text-decoration: underline;
   border-radius: 6px;
   font-size: 18pt;
   transition: background-color .3s linear, opacity .3s linear;
-  opacity: 0.6;
 }
 
 .filterLink:hover {
-  background-color: rgb(225, 73, 3);
-  opacity: 1;
+  background-color: #fff;
+  color: rgb(225, 73, 3);
+  text-decoration: none;
 }
 
 .filterLink.active {
-  background-color: rgb(225, 73, 3);
-  opacity: 1;
+  background-color: #fff;
+  color: rgb(225, 73, 3);
+  text-decoration: none;
 }
 
 @media screen and (max-width: 500px) {

@@ -18,6 +18,7 @@
   margin-top: 15px;
 }
 
+
 @media screen and (max-width: 768px) {
   .moviePoster a{
     display: inline-flex;

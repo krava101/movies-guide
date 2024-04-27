@@ -27,12 +27,6 @@
   box-shadow: 0px 10px 15px #00000022, 0px -10px 15px #00000022;
 }
 
-.homeFilter button{
-  text-decoration: underline;
-  background-color: transparent;
-  opacity: 0.9;
-}
-
 @media screen and (max-width: 768px) {
   .homeContent {
     padding: 0 20px 20px;

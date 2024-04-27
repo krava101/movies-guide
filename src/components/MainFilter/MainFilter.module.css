@@ -20,18 +20,19 @@
   border: none;
   border-radius: 6px;
   text-decoration: none;
-  opacity: 0.4;
   font-size: 18pt;
+  transition: background-color .3s linear, opacity .3s linear;
+  opacity: 0.6;
 }
 
 .filterLink:hover {
-  background-color: #626262;
-  opacity: 0.9;
+  background-color: rgb(225, 73, 3);
+  opacity: 1;
 }
 
 .filterLink.active {
-  background-color: #626262;
-  opacity: 0.9;
+  background-color: rgb(225, 73, 3);
+  opacity: 1;
 }
 
 @media screen and (max-width: 768px) {

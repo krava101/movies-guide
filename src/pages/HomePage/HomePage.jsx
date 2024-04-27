@@ -13,7 +13,7 @@ import PagePagination from "../../components/PagePagination/PagePagination";
 import MixShowsList from "../../components/MixShowsList/MixShowsList";
 import css from './HomePage.module.css';
 import { mainFilter } from "../../redux/filter/constants";
-import Filter from "../../components/Filter/Filter";
+import HomeFilter from "../../components/HomeFilter/HomeFilter";
 
 export default function HomePage() {
   const dispatch = useDispatch(); 
@@ -63,7 +63,7 @@ export default function HomePage() {
       <section className={css.homeContent}>
         <div className={css.homeFilter}>
           <p className={css.watch}>Discover new movies and TV shows</p>
-          <Filter/>
+          <HomeFilter/>
         </div>
         {isMixLoading && <p className={css.loading}>Loading...</p>}
         <MixShowsList/>

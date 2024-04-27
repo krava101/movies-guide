@@ -1,5 +1,20 @@
 .showListItem {
+    position: relative;
     width: calc((100% - 80px) / 5);
+}
+
+.icon{
+    position: absolute;
+    top: 10px;
+    right: -7px;
+    width: 20%;
+    height: 8%;
+    display: grid;
+    place-items: center;
+    background-color: rgb(225, 73, 3);
+    border-radius: 4px;
+    z-index: 99;
+    transition: transform .3s linear;
 }
 
 .showListItem a {
@@ -19,6 +34,11 @@
 .showListItem:hover img,
 .showListItem:focus img {
     transform: scale(1.03);
+}
+
+.showListItem:hover .icon,
+.showListItem:focus .icon {
+    transform: translate(7%, -12%);
 }
 
 .showListItem div {
