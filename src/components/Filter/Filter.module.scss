@@ -14,16 +14,12 @@
   font-size: 18pt;
   transition: background-color .3s linear, opacity .3s linear;
   opacity: 0.6;
-}
 
-.filterLink:hover {
-  background-color: rgb(225, 73, 3);
-  opacity: 1;
-}
-
-.filterLink.active {
-  background-color: rgb(225, 73, 3);
-  opacity: 1;
+  &:hover,
+  &.active {
+    background-color: rgb(225, 73, 3);
+    opacity: 1;
+  }
 }
 
 @media screen and (max-width: 500px) {

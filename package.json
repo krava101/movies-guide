@@ -12,7 +12,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.3",
     "axios": "^1.6.7",
-    "clsx": "^2.1.0",
+    "clsx": "^2.1.1",
     "install": "^0.13.0",
     "modern-normalize": "^2.0.0",
     "npm": "^10.5.0",
@@ -27,6 +27,7 @@
     "react-slick": "^0.30.2",
     "redux": "^5.0.1",
     "redux-persist": "^6.0.0",
+    "sass": "^1.77.5",
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
