@@ -26,7 +26,8 @@
 
 .moviesListItem img{
     width: 100%;
-    background-color: gray;
+    aspect-ratio: 2/3;
+    background-color: rgb(71, 71, 71);
     border-radius: 10px;
     transition: transform .3s linear;
 }

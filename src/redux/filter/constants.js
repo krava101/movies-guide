@@ -5,4 +5,5 @@ export const mainFilter = {
   rated: 'top_rated',
   popular: 'popular',
   upcoming: 'upcoming',
+  search: 'search',
 }

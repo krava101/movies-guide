@@ -25,6 +25,8 @@
 
 .showListItem img{
     width: 100%;
+    aspect-ratio: 2/3;
+    background-color: rgb(71, 71, 71);
     max-height: 324px;
     background-color: gray;
     border-radius: 10px;
