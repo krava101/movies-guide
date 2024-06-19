@@ -1,5 +1,5 @@
 .backLink {
-  color: #fff;
+  color: var(--white);
   font-size: 18pt;
 }
 
@@ -16,10 +16,10 @@
   margin-bottom: 20px;
   a {
     font-size: 24pt;
-    color: #fff;
+    color: var(--white);
     text-decoration: none;
     &.active {
-      color: #ff4800;
+      color: var(--orange);
     }
   }
 }

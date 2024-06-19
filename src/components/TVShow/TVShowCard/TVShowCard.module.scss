@@ -3,7 +3,7 @@
   width: calc((100% - 80px) / 5);
 
   a {
-    color: #fff;
+    color: var(--white);
     font-size: 16pt;
     text-decoration: none;
   }
@@ -11,10 +11,9 @@
   img {
     width: 100%;
     aspect-ratio: 2/3;
-    background-color: rgb(71, 71, 71);
     max-height: 324px;
-    background-color: gray;
     border-radius: 10px;
+    background-color: var(--gray-light);
     transition: transform .3s linear;
   }
 
@@ -40,7 +39,7 @@
     height: 8%;
     display: grid;
     place-items: center;
-    background-color: rgb(225, 73, 3);
+    background-color: var(--orange);
     border-radius: 4px;
     z-index: 99;
     transition: transform .3s linear;

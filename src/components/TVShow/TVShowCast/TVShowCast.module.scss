@@ -12,7 +12,7 @@
     width: 100%;
     height: auto;
     border-radius: 10px;
-    background-color: #545454;
+    background-color: var(--gray-medium);
   }
 
   span {
@@ -21,7 +21,7 @@
     width: 100%;
     aspect-ratio: 4/6;
     border-radius: 10px;
-    background-color: #545454;
+    background-color: var(--gray-medium);
 
     font-size: 30pt;
     font-weight: 700;

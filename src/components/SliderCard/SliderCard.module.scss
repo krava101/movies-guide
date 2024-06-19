@@ -3,7 +3,7 @@
   transition: transform .2s linear;
 
   a {
-    color: #fff;
+    color: var(--white);
     font-size: 10pt;
     text-decoration: none;
   }
@@ -11,7 +11,7 @@
   img {
     width: 100%;
     height: auto;
-    background-color: gray;
+    background-color: var(--gray-light);
     border-radius: 10px;
   }
 

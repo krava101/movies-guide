@@ -8,15 +8,15 @@
   width: 300px;
   background-color: transparent;
   border-radius: 8px 0 0 8px;
-  border: 1px solid #8a8a8a;
+  border: 1px solid var(--gray-easy);
   border-right: none;
   outline: none;
   padding: 0px 16px;
-  color: #ffffff;
+  color: var(--white);
 }
 
 .form input::placeholder {
-  color: #8a8a8a;
+  color: var(--gray-easy);
 }
 
 .form button {
@@ -26,9 +26,9 @@
   height: 40px;
   background-color: transparent;
   border-radius: 0 8px 8px 0;
-  border: 1px solid #8a8a8a;
+  border: 1px solid var(--gray-easy);
   border-left: none;
-  color: #8a8a8a;
+  color: var(--gray-easy);
 }
 
 @media screen and (max-width: 768px) {

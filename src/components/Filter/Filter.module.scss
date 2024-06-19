@@ -7,8 +7,8 @@
 
 .filterLink {
   padding: 5px 10px;
-  color: #fff;
-  background-color: #636363;
+  color: var(--white);
+  background-color: var(--gray-light);
   border: none;
   border-radius: 6px;
   font-size: 18pt;
@@ -17,7 +17,7 @@
 
   &:hover,
   &.active {
-    background-color: rgb(225, 73, 3);
+    background-color: var(--orange);
     opacity: 1;
   }
 }

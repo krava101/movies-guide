@@ -15,7 +15,7 @@ import UpcomingSlider from '../../components/UpcomingSlider/UpcomingSlider';
 import HomeFilter from '../../components/HomeFilter/HomeFilter';
 import MixShowsList from '../../components/MixShowsList/MixShowsList';
 import PagePagination from '../../components/PagePagination/PagePagination';
-import scss from './Welcome.module.scss';
+import scss from './WelcomePage.module.scss';
 import { changeFilter, setTotalPages } from '../../redux/filter/slice';
 import { mainFilter } from '../../redux/filter/constants';
 import LoadingShows from '../../components/LoadingShows/LoadingShows';

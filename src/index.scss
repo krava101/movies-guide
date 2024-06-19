@@ -2,9 +2,15 @@
   font-family: sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  background-color: var(--bgc);
-  --bgc: #131313;
-  --content-bg: #2e2e2e;
+  background-color: var(--dark);
+  --dark: #131313;
+  --orange: #e14903;
+  --gray-dark: #2e2e2e;
+  --gray-medium: #474747;
+  --gray-light: #717171;
+  --gray-easy: #8a8a8a;
+  --cloud: #e3e3e3;
+  --white: #fff;
 }
 
 section {

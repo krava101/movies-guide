@@ -10,7 +10,7 @@
   li{
     width: calc((100% - 80px) / 5);
     aspect-ratio: 2/3;
-    background-color: rgb(71, 71, 71);
+    background-color: var(--gray-light);
     border-radius: 10px;
     animation: loading 1s linear;
   }

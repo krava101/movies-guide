@@ -13,7 +13,7 @@
 }
 
 .navLink{
-  color: #fff;
+  color: var(--white);
   font-size: 20pt;
   text-decoration: none;
 
@@ -22,7 +22,7 @@
   }
 
   &.active {
-    color: rgb(225, 73, 3);
+    color: var(--orange);
   }
 }
 
