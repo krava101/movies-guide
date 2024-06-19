@@ -20,10 +20,12 @@ import { changeFilter, setTotalPages } from '../../redux/filter/slice';
 import { mainFilter } from '../../redux/filter/constants';
 import LoadingShows from '../../components/LoadingShows/LoadingShows';
 import { useNavigate } from 'react-router-dom';
+import { selectUpcoming } from '../../redux/upcoming/selectors';
 
 function WelcomePage() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const upcoming = useSelector(selectUpcoming);
   const filter = useSelector(selectFilter);
   const search = useSelector(selectSearch);
   const page = useSelector(selectPage);
@@ -50,8 +52,8 @@ function WelcomePage() {
   }
 
   useEffect(() => {
-    dispatch(fetchUpcoming());
     filtering(filter);
+    !upcoming.length && dispatch(fetchUpcoming());
     dispatch(setTotalPages(totalPages));
   }, [dispatch, filter, page, search, totalPages]);
 

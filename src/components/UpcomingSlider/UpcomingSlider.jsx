@@ -64,10 +64,16 @@ export default function UpcomingSlider() {
     ],
   };
 
+  const list = Array.from({ length: 7 }, (_, i) => i + 1);
+
   return (
     <>
       {isLoading ? (
-        <LoadingSlider />
+        <Slider Slider {...settings} className={css.slider}>
+          {list.map((_, i) => (
+            <LoadingSlider key={i} />
+          ))}
+        </Slider>
       ) : (
         <Slider Slider {...settings} className={css.slider}>
           {upcoming.map((e, i) => (
