@@ -1,46 +1,83 @@
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useRef } from "react";
-import { useSearchParams } from "react-router-dom";
-import { selectFilter } from "../../redux/filter/selectors";
-import { changeFilter } from "../../redux/filter/slice";
-import { mainFilter } from "../../redux/filter/constants";
-import Filter from "../Filter/Filter";
-import css from './MainFilter.module.css';
-
+import { useDispatch, useSelector } from 'react-redux';
+import { useRef } from 'react';
+import { selectFilter } from '../../redux/filter/selectors';
+import { changeFilter } from '../../redux/filter/slice';
+import { mainFilter } from '../../redux/filter/constants';
+import Filter from '../Filter/Filter';
+import scss from './MainFilter.module.scss';
+import { useSearchParams } from 'react-router-dom';
+import clsx from 'clsx';
 
 export default function MainFilter() {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const filterRef = useRef()
+  const [_, setSearchParams] = useSearchParams();
+  const filterRef = useRef();
   const dispatch = useDispatch();
-  const selectedFilter = useSelector(selectFilter);
-  const filter = searchParams.get('filter') ? searchParams.get('filter') : selectedFilter;
+  const filter = useSelector(selectFilter);
 
-  useEffect(() => {
-    Array.from(filterRef.current.children).filter(e => e.dataset.filter === filter ? e.classList.add(css.active) : e.classList.remove(css.active));
-  }, [filter])
-  
-  const handleFilter = (event) => {
+  const popularBtn = clsx(
+    scss.filterLink,
+    filter === mainFilter.popular ? scss.active : ''
+  );
+
+  const ratedBtn = clsx(
+    scss.filterLink,
+    filter === mainFilter.rated ? scss.active : ''
+  );
+
+  const playingBtn = clsx(
+    scss.filterLink,
+    filter === mainFilter.playing ? scss.active : ''
+  );
+
+  const upcomingBtn = clsx(
+    scss.filterLink,
+    filter === mainFilter.upcoming ? scss.active : ''
+  );
+
+  const handleFilter = event => {
     if (event.target !== event.currentTarget) {
-      Array.from(event.currentTarget.children).forEach(e => e.classList.remove(css.active));
       const newFilter = event.target.dataset.filter;
       dispatch(changeFilter(newFilter));
       setSearchParams({
         filter: newFilter,
         page: 1,
       });
-      event.target.classList.add(css.active);
     }
-  }
+  };
 
   return (
-    <section className={css.filterWrapper}>
-      <div ref={filterRef} className={css.filter} onClick={handleFilter}>
-        <button className={css.filterLink} type="button" data-filter={mainFilter.popular}>Popular</button>
-        <button className={css.filterLink} type="button" data-filter={mainFilter.rated}>Top Rated</button>
-        <button className={css.filterLink} type="button" data-filter={mainFilter.playing}>Now playing</button>
-        <button className={css.filterLink} type="button" data-filter={mainFilter.upcoming}>Upcoming</button>
+    <section className={scss.filterWrapper}>
+      <div ref={filterRef} className={scss.filter} onClick={handleFilter}>
+        <button
+          className={popularBtn}
+          type="button"
+          data-filter={mainFilter.popular}
+        >
+          Popular
+        </button>
+        <button
+          className={ratedBtn}
+          type="button"
+          data-filter={mainFilter.rated}
+        >
+          Top Rated
+        </button>
+        <button
+          className={playingBtn}
+          type="button"
+          data-filter={mainFilter.playing}
+        >
+          Now playing
+        </button>
+        <button
+          className={upcomingBtn}
+          type="button"
+          data-filter={mainFilter.upcoming}
+        >
+          Upcoming
+        </button>
       </div>
-      <Filter/>
+      <Filter />
     </section>
-  )
+  );
 }

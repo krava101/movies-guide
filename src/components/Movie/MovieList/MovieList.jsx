@@ -1,8 +1,8 @@
 import { selectMovies } from '../../../redux/movies/selectors';
 import { useSelector } from 'react-redux';
-import MovieCard from '../MovieCard/MovieCard';
-import css from './MovieList.module.css';
 import { selectSearch } from '../../../redux/filter/selectors';
+import MovieCard from '../MovieCard/MovieCard';
+import scss from './MovieList.module.scss';
 
 export default function MovieList() {
   const movies = useSelector(selectMovies);
@@ -11,7 +11,7 @@ export default function MovieList() {
   return (
     <>
       {movies.length ? (
-        <ul className={css.moviesList}>
+        <ul className={scss.moviesList}>
           {movies
             .filter(e => e.poster_path)
             .map(e => (
@@ -20,7 +20,7 @@ export default function MovieList() {
         </ul>
       ) : (
         search && (
-          <div className={css.notFound}>
+          <div className={scss.notFound}>
             <p>Nothing found for request «{search}»</p>
             <p>
               We couldn&apos;t find anything. Are there any grammatical errors

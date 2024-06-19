@@ -25,7 +25,7 @@ import PagePagination from '../../components/PagePagination/PagePagination';
 import MoviesList from '../../components/Movie/MovieList/MovieList';
 import MainFilter from '../../components/MainFilter/MainFilter';
 import LoadingShows from '../../components/LoadingShows/LoadingShows';
-import css from './MoviesPage.module.css';
+import scss from './MoviesPage.module.scss';
 
 export default function MoviesPage() {
   const dispatch = useDispatch();
@@ -74,10 +74,10 @@ export default function MoviesPage() {
   }, [dispatch, search, filter, page, totalPages]);
 
   return (
-    <div className={css.moviesPage}>
-      <p className={css.watch}>Discover new movies</p>
+    <div className={scss.moviesPage}>
+      <p className={scss.watch}>Discover new movies</p>
       <MainFilter />
-      <div className={css.movieListWrapper}>
+      <div className={scss.movieListWrapper}>
         {isLoading ? <LoadingShows /> : <MoviesList />}
       </div>
       {totalPages > 1 && <PagePagination />}

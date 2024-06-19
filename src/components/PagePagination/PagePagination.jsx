@@ -11,14 +11,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
 import { selectIsLoading } from '../../redux/movies/selectors';
 import { changePage } from '../../redux/filter/slice';
-import css from './PagePagination.module.css';
+import scss from './PagePagination.module.scss';
 
 export default function PagePagination() {
   const dispatch = useDispatch();
   const pagination = useRef();
   const [sum, setSum] = useState(0);
   const [more, setMore] = useState(true);
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [_, setSearchParams] = useSearchParams();
   const [pagesNum, setPagesNum] = useState(9);
 
   const isMoviesLoading = useSelector(selectIsLoading);
@@ -37,12 +37,11 @@ export default function PagePagination() {
       const mainPag = pagination.current.children;
       if (mainPag) {
         const pagList = Array.from(mainPag);
-        pagList.forEach(e => e.classList.remove(css.active));
+        pagList.forEach(e => e.classList.remove(scss.active));
         pagList.forEach(
-          e => e.dataset.page == page && e.classList.add(css.active)
+          e => e.dataset.page == page && e.classList.add(scss.active)
         );
-        mainPag[mainPag.length - 1] &&
-        mainPag[mainPag.length - 1].textContent < totalPages
+        mainPag[mainPag.length - 1]?.textContent < totalPages
           ? setMore(true)
           : setMore(false);
       }
@@ -83,25 +82,25 @@ export default function PagePagination() {
   return (
     <>
       {!isMoviesLoading && !isTVShowsLoading && (
-        <div className={css.pagination}>
+        <div className={scss.pagination}>
           {page > 1 && (
-            <button className={css.pagPrev} onClick={handlePrevPage}>
+            <button className={scss.pagPrev} onClick={handlePrevPage}>
               <BsChevronLeft />
             </button>
           )}
           {page > pagesNum - 1 && (
             <>
               <button
-                className={css.pagTotal}
+                className={scss.pagTotal}
                 data-page="1"
                 onClick={toFirstLastPage}
               >
                 1
               </button>
-              <p className={css.pagElse}>...</p>
+              <p className={scss.pagElse}>...</p>
             </>
           )}
-          <ul ref={pagination} className={css.pagList} onClick={handleMainPag}>
+          <ul ref={pagination} className={scss.pagList} onClick={handleMainPag}>
             {totalPages > pagesNum
               ? Array.from({ length: pagesNum }).map((_, i) =>
                   1 + i + sum <= totalPages ? (
@@ -118,9 +117,9 @@ export default function PagePagination() {
           </ul>
           {totalPages > pagesNum && more && (
             <>
-              <p className={css.pagElse}>...</p>
+              <p className={scss.pagElse}>...</p>
               <button
-                className={css.pagTotal}
+                className={scss.pagTotal}
                 data-page={totalPages}
                 onClick={toFirstLastPage}
               >
@@ -129,7 +128,7 @@ export default function PagePagination() {
             </>
           )}
           {+page + 1 <= totalPages && (
-            <button className={css.pagNext} onClick={handleNextPage}>
+            <button className={scss.pagNext} onClick={handleNextPage}>
               <BsChevronRight />
             </button>
           )}

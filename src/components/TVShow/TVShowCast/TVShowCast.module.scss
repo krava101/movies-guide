@@ -1,22 +1,21 @@
 .castList{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 
-.castList li{
-    width: 200px;
-}
+  li {
+    width: calc((100% - 80px)/5);
+  }
 
-.castList img{
+  img {
     width: 100%;
     height: auto;
     border-radius: 10px;
     background-color: #545454;
-}
+  }
 
-.castList span{
+  span {
     display: grid;
     place-items: center;
     width: 100%;
@@ -26,16 +25,16 @@
 
     font-size: 30pt;
     font-weight: 700;
-}
+  }
 
-.castList p {
+  p {
     font-size: 16pt;
     margin-top: 6px;
-}
-
-.castList p:last-child{
-    font-size: 14pt;
-    opacity: 0.8;
+    &:last-child {
+      font-size: 14pt;
+      opacity: 0.8;
+    }
+  }
 }
 
 @media screen and (max-width: 1024px) {

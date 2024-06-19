@@ -1,4 +1,3 @@
-
 .backLink {
   color: #fff;
   font-size: 18pt;
@@ -8,12 +7,12 @@
   font-size: 16pt;
   width: 100%;
   max-width: 800px;
+
+  & span{
+    opacity: 0.7; 
+  }
 }
 
 .movieInfo p {
   margin-bottom: 15px;
-}
-
-.movieInfo p span, .overview span {
-  opacity: 0.7;
 }

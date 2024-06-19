@@ -1,0 +1,19 @@
+.backLink {
+  color: #fff;
+  font-size: 18pt;
+}
+
+.showInfo {
+  font-size: 16pt;
+  width: 100%;
+  max-width: 800px;
+  p {
+    margin-bottom: 15px;
+    span {
+      opacity: 0.7;
+      a {
+        color: inherit;
+      }
+    }
+  }
+}

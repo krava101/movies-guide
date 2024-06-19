@@ -1,0 +1,42 @@
+.nav{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 0 40px;
+  width: 100%;
+  max-width: 1440px;
+  height: 80px;
+  background-color: var(--content-bg);
+  margin: 0 auto;
+  box-shadow: 0px 5px 15px #ffffff6d;
+}
+
+.navLink{
+  color: #fff;
+  font-size: 20pt;
+  text-decoration: none;
+
+  &:hover {
+      text-decoration: underline;
+  }
+
+  &.active {
+    color: rgb(225, 73, 3);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .nav{
+    padding: 10px 40px;
+    flex-wrap: wrap;
+    gap: 5px 10px;
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 375px){
+  .navLink{
+    font-size: 16pt;
+  }
+}

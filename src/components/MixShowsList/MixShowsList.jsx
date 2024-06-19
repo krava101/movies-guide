@@ -2,7 +2,7 @@ import { selectMixShows } from '../../redux/mixShows/selectors';
 import { useSelector } from 'react-redux';
 import MovieCard from '../Movie/MovieCard/MovieCard';
 import TVShowCard from '../TVShow/TVShowCard/TVShowCard';
-import css from './MixShowsList.module.css';
+import scss from './MixShowsList.module.scss';
 import { selectSearch } from '../../redux/filter/selectors';
 
 export default function MixShowsList() {
@@ -12,7 +12,7 @@ export default function MixShowsList() {
   return (
     <>
       {mix.length ? (
-        <ul className={css.mixList}>
+        <ul className={scss.mixList}>
           {mix
             .filter(e => e.poster_path)
             .map(e => {
@@ -25,7 +25,7 @@ export default function MixShowsList() {
         </ul>
       ) : (
         search && (
-          <div className={css.notFound}>
+          <div className={scss.notFound}>
             <p>Nothing found for request «{search}»</p>
             <p>
               We couldn&apos;t find anything. Are there any grammatical errors

@@ -1,7 +1,7 @@
 import { changeFilter } from '../../redux/filter/slice';
 import { mainFilter } from '../../redux/filter/constants';
 import { useDispatch, useSelector } from 'react-redux';
-import scss from './HomeFilter.module.css';
+import scss from './HomeFilter.module.scss';
 import clsx from 'clsx';
 import { selectFilter } from '../../redux/filter/selectors';
 import { useSearchParams } from 'react-router-dom';

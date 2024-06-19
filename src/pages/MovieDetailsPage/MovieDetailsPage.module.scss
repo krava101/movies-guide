@@ -1,0 +1,51 @@
+.movie{
+  padding: 40px;
+  h1 {
+    font-size: 36pt;
+    margin-bottom: 20px;
+  }
+}
+
+.backLink{
+    color: #fff;
+    font-size: 18pt;
+}
+
+.movieInfo{ 
+    display: flex;
+    gap: 60px;
+}
+
+@media screen and (max-width: 768px) {
+  .movie {
+    padding: 20px;
+    h1 {
+      font-size: 28pt;
+      margin-bottom: 20px;
+    }
+  }
+
+  .backLink {
+      font-size: 16pt;
+  }
+
+  .movieInfo {
+      flex-wrap: wrap;
+      gap: 40px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .movie {
+    padding: 10px;
+    h1{
+      font-size: 24pt;
+      margin-bottom: 10px;
+    }
+  }
+
+  .backLink {
+    font-size: 14pt;
+  }
+
+}

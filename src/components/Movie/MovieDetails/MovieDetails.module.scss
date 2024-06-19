@@ -1,9 +1,3 @@
-
-.backLink {
-  color: #fff;
-  font-size: 18pt;
-}
-
 .movieSubInfo {
   display: flex;
   flex-direction: column;
@@ -15,35 +9,35 @@
   display: flex;
   gap: 20px;
   margin-bottom: 20px;
-}
 
-.movieNav a {
-  font-size: 24pt;
-  color: #fff;
-  text-decoration: none;
-}
+  a {
+    font-size: 24pt;
+    color: #fff;
+    text-decoration: none;
 
-.movieNav a.active {
-  color: #ff4800;
+    &.active{
+      color: #ff4800;
+    }
+  }
 }
 
 @media screen and (max-width: 520px) {
-  .movieNav a {
+  .movieNav a{
     font-size: 18pt;
   }
 
-  .movieSubInfo {
+  .movieSubInfo{
     margin-top: 20px;
   }
 }
 
 @media screen and (max-width: 425px) {
-  .movieNav a {
-    font-size: 17pt;
-  }
-
   .movieNav {
     gap: 10px;
     margin-bottom: 10px;
+
+    a {
+      font-size: 17pt;
+    }
   }
 }

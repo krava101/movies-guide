@@ -22,7 +22,7 @@ import { Toaster } from 'react-hot-toast';
 import PagePagination from '../../components/PagePagination/PagePagination';
 import MainFilter from '../../components/MainFilter/MainFilter';
 import TVList from '../../components/TVShow/TVList/TVList';
-import css from './TVShowPage.module.css';
+import scss from './TVShowPage.module.scss';
 
 export default function TVPage() {
   const dispatch = useDispatch();
@@ -71,10 +71,10 @@ export default function TVPage() {
   }, [dispatch, search, filter, page, totalPages]);
 
   return (
-    <div className={css.tvPage}>
-      <p className={css.watch}>Discover new TV shows</p>
+    <div className={scss.tvPage}>
+      <p className={scss.watch}>Discover new TV shows</p>
       <MainFilter />
-      <div className={css.showListWrapper}>
+      <div className={scss.showListWrapper}>
         {isLoading ? <LoadingShows /> : <TVList />}
       </div>
       {totalPages > 1 && <PagePagination />}

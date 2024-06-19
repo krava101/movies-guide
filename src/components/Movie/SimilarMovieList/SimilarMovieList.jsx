@@ -1,10 +1,10 @@
-import { useDispatch, useSelector } from "react-redux";
-import { fetchSimilarMovies } from "../../../redux/currentMovie/operations";
-import { selectSimilar } from "../../../redux/currentMovie/selectors";
-import { useEffect } from "react";
-import { useParams } from "react-router-dom";
-import MovieCard from "../MovieCard/MovieCard";
-import css from './SimilarMovieList.module.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchSimilarMovies } from '../../../redux/currentMovie/operations';
+import { selectSimilar } from '../../../redux/currentMovie/selectors';
+import { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import MovieCard from '../MovieCard/MovieCard';
+import scss from './SimilarMovieList.module.scss';
 
 export default function MovieList() {
   const dispatch = useDispatch();
@@ -13,10 +13,15 @@ export default function MovieList() {
 
   useEffect(() => {
     movieId && dispatch(fetchSimilarMovies(movieId));
-  }, [dispatch, movieId])
+  }, [dispatch, movieId]);
+
   return (
-    <ul className={css.moviesList}>
-      {movies.filter(e => e.poster_path).map(e => (<MovieCard key={e.id} movie={e} />))}
+    <ul className={scss.moviesList}>
+      {movies
+        .filter(e => e.poster_path)
+        .map(e => (
+          <MovieCard key={e.id} movie={e} />
+        ))}
     </ul>
-  )
+  );
 }

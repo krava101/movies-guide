@@ -1,16 +1,13 @@
 import { useSearchParams } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { changeFilter, setSearch } from '../../redux/filter/slice';
 import { IoSearch } from 'react-icons/io5';
-import toast from 'react-hot-toast';
-import css from './SearchBar.module.css';
 import { mainFilter } from '../../redux/filter/constants';
+import toast from 'react-hot-toast';
+import scss from './SearchBar.module.scss';
 
 const notify = message => toast.error(message);
 
 export default function SearchBar() {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const dispatch = useDispatch();
+  const [_, setSearchParams] = useSearchParams();
 
   const onSubmit = event => {
     event.preventDefault();
@@ -18,8 +15,6 @@ export default function SearchBar() {
     if (search === '') {
       return notify('Please enter something!');
     }
-    dispatch(setSearch(search));
-    dispatch(changeFilter(mainFilter.search));
     setSearchParams({
       filter: mainFilter.search,
       search: search,
@@ -29,7 +24,7 @@ export default function SearchBar() {
   };
 
   return (
-    <form className={css.form} onSubmit={onSubmit}>
+    <form className={scss.form} onSubmit={onSubmit}>
       <input
         type="text"
         name="query"

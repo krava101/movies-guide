@@ -1,47 +1,47 @@
 .reviewsList {
-    display: flex;
-    flex-direction: column;
-    max-width: 900px;
-    gap: 20px;
-}
+  display: flex;
+  flex-direction: column;
+  max-width: 900px;
+  gap: 20px;
 
-.reviewsList li {
+  li {
     padding: 20px 0;
     background-color: #414141;
     border-radius: 10px;
     padding: 20px;
+  }
 }
 
 .reviewerInfo{
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-}
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
 
-.reviewerInfo span{
+  span {
     position: relative;
     display: block;
     width: 80px;
     height: 80px;
     overflow: hidden;
     border-radius: 50%;
-}
+  }
 
-.reviewerInfo img{
+  img {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     min-width: 150px;
+  }
 }
 
 .username{
-    font-size: 20pt;
-}
+  font-size: 20pt;
 
-.username ~ p{
+  & ~ p {
     font-size: 14pt;
     opacity: 0.8;
+  }
 }
 
 .reviewTxt{
@@ -49,9 +49,9 @@
 }
 
 span.customAvatar{
-    display: grid;
-    place-items: center;
-    font-size: 20pt;
-    font-weight: 700;
-    background-color: #535353;
+  display: grid;
+  place-items: center;
+  font-size: 20pt;
+  font-weight: 700;
+  background-color: #535353;
 }

@@ -14,18 +14,12 @@
   border-radius: 6px;
   font-size: 18pt;
   transition: background-color .3s linear, opacity .3s linear;
-}
 
-.filterLink:hover {
-  background-color: #fff;
-  color: rgb(225, 73, 3);
-  text-decoration: none;
-}
-
-.filterLink.active {
-  background-color: #fff;
-  color: rgb(225, 73, 3);
-  text-decoration: none;
+  &:hover, &:focus, &.active {
+    background-color: #fff;
+    color: rgb(225, 73, 3);
+    text-decoration: none;
+  }
 }
 
 @media screen and (max-width: 500px) {

@@ -3,30 +3,31 @@
   justify-content: center;
   align-items: center;
   gap: 18px;
+
+  button:not(.pagPrev,
+    .pagNext) {
+    height: 36px;
+    border: none;
+    border-radius: 4px;
+    padding: 0 10px;
+    background-color: transparent;
+    font-size: 15pt;
+    color: #fff;
+    transition: background-color .2s linear;
+    opacity: 0.6;
+
+    &:hover {
+      background-color: #8a8a8a7b;
+    }
+
+    &.active {
+      opacity: 1;
+      text-decoration: underline;
+      text-underline-offset: 5px;
+    }
+  }
 }
 
-.pagination button:not(.pagPrev,
-.pagNext){
-  height: 36px;
-  border: none;
-  border-radius: 4px;
-  padding: 0 10px;
-  background-color: transparent;
-  font-size: 15pt;
-  color: #fff;
-  transition: background-color .2s linear;
-  opacity: 0.6;
-}
-
-.pagination button:hover{
-  background-color: #8a8a8a7b;
-}
-
-.pagination button.active{
-  opacity: 1;
-  text-decoration: underline;
-  text-underline-offset: 5px;
-}
 
 .pagList{
   display: flex;
@@ -57,11 +58,11 @@
 @media screen and (max-width: 768px) {
   .pagination {
     gap: 10px;
-  }
 
-  .pagination button:not(.pagPrev, .pagNext){
-    height: 30px;
-    font-size: 13pt;
+    button:not(.pagPrev, .pagNext) {
+      height: 30px;
+      font-size: 13pt;
+    }
   }
 
   .pagElse {
@@ -78,16 +79,16 @@
 @media screen and (max-width: 600px) {
   .pagination {
     gap: 8px;
+
+    button:not(.pagPrev, .pagNext) {
+      height: 30px;
+      font-size: 12pt;
+      padding: 6px;
+    }
   }
 
   .pagList {
     gap: 8px;
-  }
-
-  .pagination button:not(.pagPrev, .pagNext) {
-    height: 30px;
-    font-size: 12pt;
-    padding: 6px;
   }
 
   .pagElse {

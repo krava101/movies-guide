@@ -5,10 +5,10 @@ import {
 import { useSelector } from 'react-redux';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import css from './UpcomingSlider.module.css';
 import Slider from 'react-slick/lib/slider';
 import SliderCard from '../SliderCard/SliderCard';
 import LoadingSlider from '../LoadingSlider/LoadingSlider';
+import scss from './UpcomingSlider.module.scss';
 
 export default function UpcomingSlider() {
   const upcoming = useSelector(selectUpcoming);
@@ -69,13 +69,13 @@ export default function UpcomingSlider() {
   return (
     <>
       {isLoading ? (
-        <Slider Slider {...settings} className={css.slider}>
+        <Slider Slider {...settings} className={scss.slider}>
           {list.map((_, i) => (
             <LoadingSlider key={i} />
           ))}
         </Slider>
       ) : (
-        <Slider Slider {...settings} className={css.slider}>
+        <Slider Slider {...settings} className={scss.slider}>
           {upcoming.map((e, i) => (
             <SliderCard key={i} movie={e} />
           ))}

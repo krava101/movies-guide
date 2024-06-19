@@ -1,9 +1,5 @@
-import css from './Layout.module.css';
+import scss from './Layout.module.scss';
 
 export default function Layout({ children }) {
-  return(
-    <main className={css.wrapper}>
-      {children}
-    </main>
-  )
+  return <main className={scss.wrapper}>{children}</main>;
 }
